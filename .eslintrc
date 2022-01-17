@@ -1,0 +1,35 @@
+{
+  "extends": "@pancakeswap/eslint-config-pancake",
+  "rules": {
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [
+          "src/setupTests.[jt]s?(x)",
+          "src/testHelpers.[jt]s?(x)",
+          "**/*.test.[jt]s?(x)",
+          "rollup.config.js",
+          "src/mocks/**"
+        ]
+      }
+    ],
+    "react/default-props-match-prop-types": [1],
+    "react/require-default-props": 0,
+    "lines-between-class-members": 0,
+    "import/prefer-default-export": 0,
+    "@typescript-eslint/no-shadow": 0,
+    "no-restricted-syntax": 0,
+    "no-new": 0
+  },
+  "overrides": [
+    {
+      "files": ["jest.setup.js"],
+      "env": {
+        "jest": true
+      },
+      "rules": {
+        "import/no-extraneous-dependencies": 0
+      }
+    }
+  ]
+}

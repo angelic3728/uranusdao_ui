@@ -1,0 +1,34 @@
+[
+  {
+    "name": "CRO Token",
+    "symbol": "CRO",
+    "address": "0x403d2c1fBf85fD27d0da721c3DE442Fb43dbA901",
+    "chainId": 338,
+    "decimals": 18,
+    "logoURI": "https://vvs.finance/images/0x403d2c1fBf85fD27d0da721c3DE442Fb43dbA901.png"
+  },
+  {
+    "name": "TAN Token",
+    "symbol": "tan",
+    "address": "0x8ab907045CF96a52f08B3dE0d3A8D4a80e80C97E",
+    "chainId": 338,
+    "decimals": 18,
+    "logoURI": "https://vvs.finance/images/0x8ab907045CF96a52f08B3dE0d3A8D4a80e80C97E.png"
+  },
+  {
+    "name": "ETH Token",
+    "symbol": "ETH",
+    "address": "0x726E7B759DF6b428c393626cb2570110aDc4c52F",
+    "chainId": 338,
+    "decimals": 18,
+    "logoURI": "https://vvs.finance/images/0x726E7B759DF6b428c393626cb2570110aDc4c52F.png"
+  },
+  {
+    "name": "USDC Token",
+    "symbol": "USDC",
+    "address": "0xBCFeB50Dd52D1eEB1f311378991f5a660497aCe4",
+    "chainId": 338,
+    "decimals": 18,
+    "logoURI": "https://vvs.finance/images/0xBCFeB50Dd52D1eEB1f311378991f5a660497aCe4.png"
+  }
+]
