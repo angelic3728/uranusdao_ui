@@ -31,7 +31,7 @@ const UserMenu = () => {
 
   if (!account) {
     return (
-      <ConnectWalletButton roundness="lg" borderRadius="50px" height="42px" padding="12px 24px 12px 24px" scale="xs" />
+      <ConnectWalletButton variant='tertiary' mr="5px" scale="sm" />
     )
   }
 
@@ -48,8 +48,6 @@ const UserMenu = () => {
         </UserMenuItem>
       </StyledLink>
       <UserMenuDivider />
-      {/* <ProfileUserMenuItem isLoading={isLoading} hasProfile={hasProfile} />
-      <UserMenuDivider /> */}
       <UserMenuItem as="button" onClick={logout}>
         <Flex alignItems="center" justifyContent="space-between" width="100%">
           {t('Disconnect')}

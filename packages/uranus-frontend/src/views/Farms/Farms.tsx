@@ -7,6 +7,7 @@ import { ChainId } from 'uranus-swap-sdk'
 import styled from 'styled-components'
 import FlexLayout from 'components/Layout/Flex'
 import Page from 'components/Layout/Page'
+import Toolbar from 'components/Toolbar'
 import { useFarms, usePollFarmsWithUserData, usePriceTanUsdc } from 'state/farms/hooks'
 import useIntersectionObserver from 'hooks/useIntersectionObserver'
 import { DeserializedFarm } from 'state/types'
@@ -393,7 +394,8 @@ const Farms: React.FC = () => {
   }
 
   return (
-    <>
+    <div style={{ marginLeft: '250px' }}>
+      <Toolbar />
       <StyledPageHeader>
         <FarmBackground />
         <StyledHeading as="h1" scale="xxl" mb="20px" weight={500}>
@@ -462,7 +464,7 @@ const Farms: React.FC = () => {
         )}
         <div ref={observerRef} />
       </Page>
-    </>
+    </div>
   )
 }
 

@@ -91,6 +91,7 @@ export type Colors = {
   darkPurple: string;
   grayCF: string;
   lightAqua: string;
+  lightYellow: string;
 };
 
 export type ZIndices = {

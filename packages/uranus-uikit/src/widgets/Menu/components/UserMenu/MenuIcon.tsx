@@ -13,12 +13,12 @@ const MenuIconWrapper = styled.div<{ borderColor: keyof Colors }>`
   border-style: solid;
   border-width: 2px;
   display: flex;
-  height: 34px;
+  height: 33px;
   justify-content: center;
-  left: 4px;
+  left: 0px;
   position: absolute;
-  top: 4px;
-  width: 34px;
+  top: 0px;
+  width: 33px;
   z-index: 102;
   > svg {
     width: 104%;

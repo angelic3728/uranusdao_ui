@@ -5,6 +5,7 @@ import { Flex, Image, Link, Button, Text, useMatchBreakpoints } from 'uranus-uik
 import { useWeb3React } from '@web3-react/core'
 import { useTranslation } from 'contexts/Localization'
 import ConnectWalletButton from 'components/ConnectWalletButton'
+import Toolbar from 'components/Toolbar'
 import useTheme from 'hooks/useTheme'
 import { isCountdown } from 'utils'
 import CompositeImage, { CompositeImageProps } from './CompositeImage'

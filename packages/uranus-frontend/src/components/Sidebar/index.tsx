@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
-
+import useTheme from 'hooks/useTheme'
 import * as FaIcons from 'react-icons/fa' 
 
 import { SidebarData } from './SidebarData';
@@ -23,14 +23,31 @@ const MenuIconClose = styled(Link)`
     color: #ffffff;
 `
 
+const ImageWrapper = styled.div`
+  margin-top:15px;
+  text-align:center;
+  width: 100%;
+
+  ${({ theme }) => theme.mediaQueries.md} {
+    order: 1;
+  }
+`
+
 const SidebarMenu = styled.div<{close: boolean}>`
     width: 250px;
-    height: 100vh;
-    background-color: #000080;
+    height: 100%;
+    background-color: ${({ theme }) => theme.isDark
+            ? theme.colors.darkGrey
+            : theme.colors.grey};
     position: fixed;
     top: 0;
     left: ${({ close}) => close ? '0' : '-100%'};
     transition: .6s;
+    z-index: 5;
+`
+
+const MenuWrapper = styled.ul`
+    margin-top: 20px;
 `
 
 const MenuItems = styled.li`
@@ -39,44 +56,112 @@ const MenuItems = styled.li`
     align-items: center;
     justify-content: start;
     width: 100%;
-    height: 90px;
-    padding: 1rem 0 1.25rem;
+    padding: 1rem 2rem 0.3rem;
 `
 
 const MenuItemLinks = styled(Link)`
     display: flex;
     align-items: center;
-    padding: 0 2rem;
+    padding: 0px;
     font-size: 20px;
     text-decoration: none;
-    color: #ffffff;
+    color: ${({ theme }) => theme.isDark
+            ? '#FFFFFF'
+            : '#000000'};
     &:hover {
-        background-color: #ffffff;
-        color: #000080;
-        width: 100%;
-        height: 45px;
-        text-align: center;
-        border-radius: 5px;
-        margin: 0 2rem;
+        color: ${({ theme }) => theme.isDark
+            ? '#2EE6F1'
+            : '#000080'};
+`
+
+const MenuItemAnchor = styled.a`
+    display: flex;
+    align-items: center;
+    padding: 0px;
+    font-size: 20px;
+    text-decoration: none;
+    color: ${({ theme }) => theme.isDark
+            ? '#FFFFFF'
+            : '#000000'};
+    &:hover {
+        color: ${({ theme }) => theme.isDark
+            ? '#2EE6F1'
+            : '#000080'};
     }
+`
+
+const ActiveMenuItemLinks = styled(Link)`
+    display: flex;
+    align-items: center;
+    padding: 0px;
+    font-size: 20px;
+    text-decoration: none;
+    color: ${({ theme }) => theme.isDark
+            ? '#2EE6F1'
+            : '#000080'};
+`
+
+const Devider = styled.div`
+    border-bottom: 1px solid gray;
+    margin: 15px 10px;
 `
 
 const Sidebar: React.FunctionComponent = () => {
     const [close, setClose] = useState(true)
+    const { theme, isDark, toggleTheme } = useTheme()
+    const [navNum, setNavNum] = useState(0)
     const showSidebar = () => setClose(!close)
     return (
         <>
             <SidebarMenu close={close}>
+                <ImageWrapper>
+                    <img src={theme.isDark ? "/images/logos/sidebar_logo_dark.png" : "/images/logos/sidebar_logo.png"} alt="ifo bunny" width="100px" />
+                </ImageWrapper>
+                <MenuWrapper>
                 {SidebarData.map((item, index) => {
                     return (
                         <MenuItems key={item.key}>
-                            <MenuItemLinks to={item.path}>
-                                {item.icon}
-                                <span style={{marginLeft: '16px'}}>{item.title}</span>
-                            </MenuItemLinks>
+                            {(navNum === index)?
+                                <ActiveMenuItemLinks to={item.path} onClick={() => setNavNum(index)}>
+                                    {item.icon}
+                                    <span style={{marginLeft: '16px'}}>{item.title}</span>
+                                </ActiveMenuItemLinks>
+                                :
+                                <MenuItemLinks to={item.path} onClick={() => setNavNum(index)}>
+                                    {item.icon}
+                                    <span style={{marginLeft: '16px'}}>{item.title}</span>
+                                </MenuItemLinks>
+                            }
                         </MenuItems>
                     )
                 })}
+                <Devider />
+                <MenuItems >
+                    {(navNum === 5)?
+                        <ActiveMenuItemLinks to='/info' onClick={() => setNavNum(5)}>
+                            <FaIcons.FaChartLine />
+                            <span style={{marginLeft: '16px'}}>Analytics</span>
+                        </ActiveMenuItemLinks>
+                        :
+                        <MenuItemLinks to='/info'  onClick={() => setNavNum(5)}>
+                            <FaIcons.FaChartLine />
+                            <span style={{marginLeft: '16px'}}>Analytics</span>
+                        </MenuItemLinks>
+                    }
+                </MenuItems>
+                <MenuItems >
+                    <MenuItemAnchor href='https://docs.uranusdao.finance/' target='_blink'>
+                            <FaIcons.FaFileContract />
+                            <span style={{marginLeft: '16px'}}>Docs</span>
+                    </MenuItemAnchor>
+                </MenuItems>
+                <MenuItems >
+                    <MenuItemAnchor href='https://github.com/0x-uranus' target='_blink'>
+                        <FaIcons.FaFileCode />
+                        <span style={{marginLeft: '16px'}}>Code</span>
+                    </MenuItemAnchor>
+                </MenuItems>
+                </MenuWrapper>
             </SidebarMenu>
         </>
     )

@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Flex } from 'uranus-uikit'
 import Footer from 'components/Menu/Footer'
 import SubNav from 'components/Menu/SubNav'
+import Toolbar from 'components/Toolbar'
 import { SEOHead } from 'components/Layout/Page'
 import MoleFooterAnimation from 'components/MoleFooterAnimation'
 
@@ -10,11 +11,10 @@ const StyledPage = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  padding: 16px;
-  padding-bottom: 50px;
   min-height: calc(100vh - 70px);
-  background: ${({ theme }) => theme.colors.beige};
+  background: ${({ theme }) => theme.isDark
+            ? theme.colors.darkPurple
+            : theme.colors.lightAqua};
 
   ${({ theme }) => theme.mediaQueries.xs} {
     background-size: auto;
@@ -33,8 +33,9 @@ const StyledPage = styled.div`
 
 const Page: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ children, ...props }) => {
   return (
-    <>
+    <div style={{ marginLeft: '250px', padding:10 }}>
       <SEOHead />
+      <Toolbar />
       <StyledPage {...props}>
         <SubNav />
         {children}
@@ -42,7 +43,7 @@ const Page: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ children, ...pro
         {/* <Footer /> */}
         {/* <MoleFooterAnimation /> */}
       </StyledPage>
-    </>
+    </div>
   )
 }
 

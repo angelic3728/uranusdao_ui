@@ -6,6 +6,7 @@ import { formatUnits } from 'ethers/lib/utils'
 import BigNumber from 'bignumber.js'
 import { useWeb3React } from '@web3-react/core'
 import { Heading, Flex, Image, Text } from 'uranus-uikit'
+import Toolbar from 'components/Toolbar'
 import orderBy from 'lodash/orderBy'
 import partition from 'lodash/partition'
 import { useTranslation } from 'contexts/Localization'
@@ -261,7 +262,8 @@ const Pools: React.FC = () => {
   const tableLayout = <PoolsTable pools={chosenPools} account={account} userDataLoaded={userDataLoaded} />
 
   return (
-    <>
+    <div style={{ marginLeft: '250px' }}>
+      <Toolbar />
       <StyledPageHeader>
         <MineBackgroundWrapper>
           <MineBackground />
@@ -285,7 +287,7 @@ const Pools: React.FC = () => {
             <BountyCard />
           </Flex> */}
         </Flex>
-        {/* <PoolControls>
+         <PoolControls>
           <PoolTabButtons
             stakedOnly={stakedOnly}
             setStakedOnly={setStakedOnly}
@@ -323,7 +325,7 @@ const Pools: React.FC = () => {
               <SearchInput onChange={handleChangeSearchQuery} placeholder="Search Pools" />
             </LabelWrapper>
           </FilterContainer>
-        </PoolControls> */}
+        </PoolControls> 
       </StyledPageHeader>
       <Page style={{ marginTop: '-90px', position: 'relative' }}>
         {showFinishedPools && (
@@ -347,7 +349,7 @@ const Pools: React.FC = () => {
           height={184.5}
         /> */}
       </Page>
-    </>
+    </div>
   )
 }
 

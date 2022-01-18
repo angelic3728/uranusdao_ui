@@ -81,7 +81,7 @@ const WalletModal: React.FC<WalletModalProps> = ({ initialView = WalletView.WALL
           </ButtonMenu>
         </Tabs>
       </ModalHeader>
-      <ModalBody p="24px" maxWidth="460px" width="100%" background={theme.colors.lightBeige}>
+      <ModalBody p="24px" maxWidth="460px" width="100%" background={theme.isDark ? theme.colors.darkPurple:theme.colors.lightAqua}>
         {view === WalletView.WALLET_INFO && <WalletInfo hasLowCROBalance={hasLowCROBalance} onDismiss={onDismiss} />}
         {view === WalletView.TRANSACTIONS && <WalletTransactions />}
       </ModalBody>

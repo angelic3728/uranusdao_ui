@@ -1,5 +1,5 @@
 import React, { lazy } from 'react'
-import { Router, Redirect, Route, Switch } from 'react-router-dom'
+import { Router, Redirect, Route, Switch, useParams } from 'react-router-dom'
 import { ResetCSS } from 'uranus-uikit'
 import BigNumber from 'bignumber.js'
 import useEagerConnect from 'hooks/useEagerConnect'
@@ -28,6 +28,7 @@ import {
 import RedirectOldRemoveLiquidityPathStructure from './views/RemoveLiquidity/redirects'
 import { RedirectPathToSwapOnly, RedirectToSwap } from './views/Swap/redirects'
 import GlobalCheckClaimStatus from './views/Collectibles/components/GlobalCheckClaimStatus'
+import Sidebar from './components/Sidebar'
 
 // Route-based code splitting
 // Only pool is included in the main bundle because of it's the most visited page
@@ -64,9 +65,9 @@ const App: React.FC = () => {
   useEagerConnect()
   // useFetchProfile()
   // usePollCoreFarmData()
-
   return (
     <Router history={history}>
+      <Sidebar />
       <ScrollToTop>
         <ResetCSS />
         <GlobalStyle />

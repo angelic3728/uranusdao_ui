@@ -42,8 +42,10 @@ const StyledNav = styled.nav<{ showMenu: boolean }>`
 const BodyWrapper = styled.div`
   position: relative;
   display: flex;
-  padding-top: 77px;
-  background: ${({ theme }) => theme.colors.extraBackground};
+  padding-top: 0px;
+  background: ${({ theme }) => theme.isDark
+            ? theme.colors.darkPurple
+            : theme.colors.lightAqua};
 `;
 
 const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
@@ -127,11 +129,11 @@ const Menu: React.FC<NavProps> = ({
 
   return (
     <Wrapper>
-      <StyledNav showMenu={showMenu}>
-        <Flex>
+      <StyledNav showMenu={false}>
+        {/*<Flex>
           <Logo isDark={isDark} href={homeLink?.href ?? "/"} />
           {!isMobile && <MenuItems items={links} activeItem={activeItem} activeSubItem={activeSubItem} ml="24px" />}
-        </Flex>
+        </Flex>*/}
         <Flex alignItems="center">
           {isBlindMode && <Box mt="4px" mr="32px">
             {tooltipVisible && tooltip}

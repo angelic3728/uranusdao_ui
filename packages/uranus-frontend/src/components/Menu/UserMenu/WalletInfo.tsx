@@ -3,6 +3,7 @@ import { Box, Button, Flex, InjectedModalProps, LinkExternal, Message, Skeleton,
 import { useWeb3React } from '@web3-react/core'
 import useTokenBalance, { FetchStatus, useGetCroBalance } from 'hooks/useTokenBalance'
 import useAuth from 'hooks/useAuth'
+import useTheme from 'hooks/useTheme'
 import { useTranslation } from 'contexts/Localization'
 import { getExplorerLink } from 'utils'
 import { getFullDisplayBalance, formatBigNumber } from 'utils/formatBalance'
@@ -23,6 +24,7 @@ const WalletInfo: React.FC<WalletInfoProps> = ({ hasLowCROBalance, onDismiss }) 
   const { account } = useWeb3React()
   const { balance, fetchStatus } = useGetCroBalance()
   const { balance: tanBalance, fetchStatus: tanFetchStatus } = useTokenBalance(tokens.tan.address)
+  const { theme } = useTheme()
   const { logout } = useAuth()
 
   const handleLogout = () => {

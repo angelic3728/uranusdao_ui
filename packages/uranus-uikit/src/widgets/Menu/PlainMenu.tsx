@@ -33,8 +33,8 @@ const StyledNav = styled.nav<{ showMenu: boolean }>`
 const BodyWrapper = styled.div`
   position: relative;
   display: flex;
-  padding-top: 77px;
-  background: #E2E0DB;
+  padding-top: 0px;
+  background: #B6D1E9;
 `;
 
 const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
@@ -95,15 +95,6 @@ const Logo: React.FC<Props> = ({ isDark, href }) => {
 
   return (
     <Flex>
-      {isAbsoluteUrl ? (
-        <StyledLink as="a" href={href} aria-label="URANUS home page">
-          {innerLogo}
-        </StyledLink>
-      ) : (
-        <StyledLink to={href} aria-label="URANUS home page">
-          {innerLogo}
-        </StyledLink>
-      )}
     </Flex>
   );
 };

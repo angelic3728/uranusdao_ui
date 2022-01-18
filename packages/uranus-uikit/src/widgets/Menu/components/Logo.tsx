@@ -55,15 +55,7 @@ const Logo: React.FC<Props> = ({ isDark, href }) => {
 
   return (
     <Flex>
-      {isAbsoluteUrl ? (
-        <StyledLink as="a" href={href} aria-label="URANUS home page">
-          {innerLogo}
-        </StyledLink>
-      ) : (
-        <StyledLink to={href} aria-label="URANUS home page">
-          {innerLogo}
-        </StyledLink>
-      )}
+      
     </Flex>
   );
 };

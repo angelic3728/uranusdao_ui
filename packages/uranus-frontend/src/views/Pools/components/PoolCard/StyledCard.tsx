@@ -15,7 +15,7 @@ export const StyledCard = styled(Card)<{ isFinished?: boolean }>`
   }
 
   ${({ theme }) => theme.mediaQueries.lg} {
-    max-width: 530px;
+    max-width: 360px;
   }
 `
 

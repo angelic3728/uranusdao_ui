@@ -27,8 +27,8 @@ const Menu = (props) => {
   
   return (
     <UikitMenu
-      userMenu={isCountdown() ? null : <UserMenu />}
-      globalMenu={isCountdown() ? null : <GlobalSettings />}
+      // userMenu={isCountdown() ? null : <UserMenu />}
+      // globalMenu={isCountdown() ? null : <GlobalSettings />}
       isDark={isDark}
       isBlindMode={isBlindMode()}
       toggleTheme={toggleTheme}
@@ -44,13 +44,13 @@ const Menu = (props) => {
       activeItem={activeMenuItem?.href}
       activeSubItem={activeSubMenuItem?.href}
       buyTanLabel={t('Buy TAN')}
-      profile={{
-        username: profile?.username,
-        image: profile?.nft ? `/images/nfts/${profile.nft?.images.sm}` : undefined,
-        profileLink: '/profile',
-        noProfileLink: '/profile',
-        showPip: !profile?.username,
-      }}
+      // profile={{
+      //   username: profile?.username,
+      //   image: profile?.nft ? `/images/nfts/${profile.nft?.images.sm}` : undefined,
+      //   profileLink: '/profile',
+      //   noProfileLink: '/profile',
+      //   showPip: !profile?.username,
+      // }}
       iconCallback={() => registerToken(tokens.tan.address, tokens.tan.symbol, tokens.tan.decimals)}
       tanAddress={tokens.tan.address}
       {...props}

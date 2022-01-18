@@ -9,27 +9,27 @@ export const SidebarData = [
         icon: <FaIcons.FaHome />
     },
     {
-        title: 'Team',
-        path: '/team',
+        title: 'Swap',
+        path: '/swap',
         key: 2,
-        icon: <FaIcons.FaUsers />
+        icon: <FaIcons.FaExchangeAlt />
     },
     {
-        title: 'Tasks',
-        path: '/tasks',
+        title: 'Liquidity',
+        path: '/liquidity',
         key: 3,
-        icon: <FaIcons.FaTasks />
+        icon: <FaIcons.FaCheckDouble />
     },
     {
-        title: 'Chats',
-        path: '/chats',
+        title: 'Farms',
+        path: '/farms',
         key: 4,
-        icon: <FaIcons.FaRocketchat />
+        icon: <FaIcons.FaCoins />
     },
     {
-        title: 'Analytics',
-        path: '/analytics',
+        title: 'Mines',
+        path: '/mines',
         key: 5,
-        icon: <FaIcons.FaRegChartBar />
+        icon: <FaIcons.FaDharmachakra />
     }
 ]
