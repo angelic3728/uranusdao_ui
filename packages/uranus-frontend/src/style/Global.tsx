@@ -10,10 +10,11 @@ declare module 'styled-components' {
 
 const GlobalStyle = createGlobalStyle`
   * {
-    @font-face: ${({ theme }) => fonts},
+    ${fonts}
   }
   body {
-    font-family:Square
+    font-family:Square;
+    font-style: inherit;
     background-color: ${({ theme }) => theme.colors.background};
 
     img {
