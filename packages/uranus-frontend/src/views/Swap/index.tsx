@@ -51,7 +51,7 @@ const SwapBody = styled(AppBody)<{ show: boolean; contentHeight: number }>`
   height: ${({ show, contentHeight }) => (show ? `${contentHeight + 109}px` : `${contentHeight}px`)};
   transition: height 300ms ease-in-out;
   background-color: ${({ theme }) => theme.colors.background};
-  border-radius: 12px;
+  border-radius: 8px;
 `
 const SwapContent = styled.div`
   background-color: ${({ theme }) => theme.colors.background};
