@@ -46,13 +46,15 @@ const getOpacity = ({ $isLoading = false }: TransientButtonProps) => {
 const StyledButton = styled.button<BaseButtonProps>`
   align-items: center;
   border: 0;
-  border-radius: 12px;
-  box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;
+  border-radius: 4px;
   cursor: pointer;
   display: inline-flex;
   font-family: inherit;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 300;
+  color: ${({ theme }) => theme.isDark
+        ? theme.colors.white
+        : theme.colors.black};
   justify-content: center;
   letter-spacing: 0.03em;
   line-height: 1;

@@ -3,7 +3,6 @@ import { Currency, ETHER, JSBI, TokenAmount } from 'uranus-swap-sdk'
 import { Button, ChevronDownIcon, Text, AddIcon, useModal, Flex } from 'uranus-uikit'
 import styled from 'styled-components'
 import { useTranslation } from 'contexts/Localization'
-import MoleTopRow from 'views/Swap/components/MoleTopRow'
 import { LightCard } from '../../components/Card'
 import { AutoColumn, ColumnCenter } from '../../components/Layout/Column'
 import { CurrencyLogo } from '../../components/Logo'
@@ -92,7 +91,6 @@ export default function PoolFinder() {
 
   return (
     <Page>
-      <MoleTopRow />
       <AppBody>
         <AppHeader title={t('Import Pool')} subtitle={t('Import an existing pool')} backTo="/pool" />
         <AutoColumn style={{ padding: '1rem' }} gap="md">

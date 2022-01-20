@@ -25,12 +25,12 @@ export enum Rounding {
 
 export const FACTORY_ADDRESSES = {
   [ChainId.MAINNET]: "0x3b44b2a187a7b3824131f8db5a74194d0a42fc15",
-  [ChainId.TESTNET]: "0x7cEd5C4494D00B503196F2Ef40240Ad39930f1bc"
+  [ChainId.TESTNET]: "0x047C918a8E610AC1D952dE2CcdEdf50fF73895C6"
 }
 
 export const INIT_CODE_HASHES = {
   [ChainId.MAINNET]: "0xa77ee1cc0f39570ddde947459e293d7ebc2c30ff4e8fc45860afdcb2c2d3dc17",
-  [ChainId.TESTNET]: "0xfa868a2693adfae1ebe0bb2b0bfd0838b3eea4c053c4519e564f7f653ce3cfaa"
+  [ChainId.TESTNET]: "0x05672c769cd3065d3859947ccde8f65f702dbf2e0a3156472d8449e24f6b3ef6"
 }
 
 export const MINIMUM_LIQUIDITY = JSBI.BigInt(1000)

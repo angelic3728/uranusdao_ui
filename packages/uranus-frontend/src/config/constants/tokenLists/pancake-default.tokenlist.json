@@ -64,6 +64,8 @@
       "logoURI": "./images/tokens/0x062E66477Faf219F25D27dCED647BF57C3107d52.svg",
       "tags": ["mainnet"]
     },
+    
+
     {
       "name": "WCRO Token",
       "symbol": "WCRO",
@@ -76,10 +78,10 @@
     {
       "name": "TAN Token",
       "symbol": "TAN",
-      "address": "0x904Bd5a5AAC0B9d88A0D47864724218986Ad4a3a",
+      "address": "0x523E5f7C31f05E32560C329E2Ea95DB9A17f8A20",
       "chainId": 338,
       "decimals": 18,
-      "logoURI": "./images/tokens/0x904Bd5a5AAC0B9d88A0D47864724218986Ad4a3a.svg",
+      "logoURI": "./images/tokens/0x523E5f7C31f05E32560C329E2Ea95DB9A17f8A20.svg",
       "tags": ["testnet"]
     },
     {

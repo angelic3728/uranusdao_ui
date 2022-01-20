@@ -6,7 +6,7 @@ import PageHeader from './PageHeader'
 const StyledPageHeader = styled(PageHeader)`
   position: relative;
   padding-bottom: 60px;
-  background: ${({ theme }) => theme.colors.darkPurple};
+  background: transparent;
   .bg {
     position: absolute;
     max-width: 1200px;

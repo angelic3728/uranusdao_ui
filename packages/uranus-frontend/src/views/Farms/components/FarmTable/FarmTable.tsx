@@ -1,8 +1,9 @@
 import React, { useRef } from 'react'
 import styled from 'styled-components'
-import { useTable, Button, ChevronUpIcon, ColumnType } from 'uranus-uikit'
+import { useTable, Button, ChevronUpIcon, ColumnType, useMatchBreakpoints } from 'uranus-uikit'
 import { useTranslation } from 'contexts/Localization'
-
+import { isBlindMode } from 'utils'
+import { DesktopColumnSchema, DesktopColumnBlindModeSchema, MobileColumnBlindModeSchema, MobileColumnSchema } from '../types'
 import Row, { RowProps } from './Row'
 
 export interface ITableProps {
@@ -45,6 +46,15 @@ const TableBody = styled.tbody`
   }
 `
 
+const TableHead = styled.tr`
+  & td {
+      padding:10px 0px;
+      font-size: 13px!important;
+      vertical-align: middle;
+      color: ${({ theme }) => theme.colors.text}
+  }
+`
+
 const TableContainer = styled.div`
   position: relative;
 `
@@ -61,8 +71,14 @@ const FarmTable: React.FC<ITableProps> = (props) => {
   const { t } = useTranslation()
   const { data, columns, userDataReady } = props
 
-  const { rows } = useTable(columns, data, { sortable: true, sortColumn: 'farm' })
+  const { isDesktop, isMobile } = useMatchBreakpoints()
 
+  const isSmallerScreen = !isDesktop
+  const tableSchema = isSmallerScreen ? (isBlindMode() ? MobileColumnBlindModeSchema : MobileColumnSchema) : (isBlindMode() ? DesktopColumnBlindModeSchema : DesktopColumnSchema)
+  const columnNames = tableSchema.map((column) => column.name)
+
+  const { rows } = useTable(columns, data, { sortable: true, sortColumn: 'farm' })
+  // debugger;
   const scrollToTop = (): void => {
     tableWrapperEl.current.scrollIntoView({
       behavior: 'smooth',
@@ -75,6 +91,17 @@ const FarmTable: React.FC<ITableProps> = (props) => {
         <TableWrapper ref={tableWrapperEl}>
           <StyledTable>
             <TableBody>
+              <TableHead>
+                  <td style={{paddingLeft:32}}>TOKEN PAIR</td>
+                  {Object.keys(rows[0].original).map((key) => {
+                    const columnIndex = columnNames.indexOf(key)
+                    if (columnIndex === -1 || key === 'farm') {
+                      return null
+                    }
+                    return (<td>{key.toUpperCase()}</td>)
+                  })
+                }
+              </TableHead>
               {rows.map((row) => {
                 return <Row {...row.original} userDataReady={userDataReady} key={`table-row-${row.id}`} />
               })}

@@ -36,9 +36,6 @@ const AutoAprCell: React.FC<AprCellProps> = ({ pool }) => {
   return (
     <StyledCell role="cell">
       <CellContent>
-        <Text fontSize="12px" color="textSubtle" textAlign="left">
-          {isBlindMode() ? t('TAN Allocation') : t('APY')}
-        </Text>
         {isBlindMode() ? "/ Block" : <Apr pool={pool} stakedBalance={tanAsBigNumber} performanceFee={performanceFeeAsDecimal} showIcon={!isMobile} />}
       </CellContent>
     </StyledCell>

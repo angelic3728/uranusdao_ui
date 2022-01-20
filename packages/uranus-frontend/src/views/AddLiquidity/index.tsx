@@ -9,7 +9,6 @@ import { useTranslation } from 'contexts/Localization'
 import UnsupportedCurrencyFooter from 'components/UnsupportedCurrencyFooter'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { useDispatch } from 'react-redux'
-import MoleTopRow from 'views/Swap/components/MoleTopRow'
 import { AppDispatch } from '../../state'
 import { LightCard } from '../../components/Card'
 import { AutoColumn, ColumnCenter } from '../../components/Layout/Column'
@@ -318,7 +317,6 @@ export default function AddLiquidity({
   )
   return (
     <Page>
-      <MoleTopRow />
       <AppBody>
         <AppHeader
           title={t('Add Liquidity')}
@@ -372,13 +370,13 @@ export default function AddLiquidity({
             />
             {currencies[Field.CURRENCY_A] && currencies[Field.CURRENCY_B] && pairState !== PairState.INVALID && (
               <>
-                <LightCard padding="0px" borderRadius="20px">
+                <LightCard padding="0px" borderRadius="12px">
                   <RowBetween padding="1rem">
                     <Text fontSize="14px">
                       {noLiquidity ? t('Initial prices and pool share') : t('Prices & pool share')}
                     </Text>
                   </RowBetween>{' '}
-                  <LightCard padding="1rem" borderRadius="20px">
+                  <LightCard padding="1rem" borderRadius="12px">
                     <PoolPriceBar
                       currencies={currencies}
                       poolTokenPercentage={poolTokenPercentage}

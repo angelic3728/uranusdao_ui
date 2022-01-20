@@ -45,7 +45,7 @@ const FarmsCard = () => {
 
   usePollFarmsWithUserData(true)
   // const activeFarms = farmsLP.filter(farm => farm.pid !== 0 && farm.multiplier !== '0X' && !isArchivedPid(farm.pid))
-  const activeFarms = farmsLP.filter(farm => farm.pid !== 0 && farm.pid !== 3) // FIXME temp show CRO/TAN and CRO/USDC with 0x
+  const activeFarms = farmsLP.filter(farm => farm.pid !== 0 && farm.pid !== 7) // FIXME temp show CRO/TAN and CRO/USDC with 0x
   const stakedOnlyFarms = activeFarms.filter(farm =>
     farm.userData && new BigNumber(farm.userData.stakedBalance).isGreaterThan(0),
   )

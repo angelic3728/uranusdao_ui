@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 // eslint-disable-next-line import/no-unresolved
 import { PancakeTheme } from 'uranus-uikit/dist/theme'
+import fonts from "./Fonts";
 
 declare module 'styled-components' {
   /* eslint-disable @typescript-eslint/no-empty-interface */
@@ -9,9 +10,10 @@ declare module 'styled-components' {
 
 const GlobalStyle = createGlobalStyle`
   * {
-    font-family: 'soleil', sans-serif;
+    @font-face: ${({ theme }) => fonts},
   }
   body {
+    font-family:Square
     background-color: ${({ theme }) => theme.colors.background};
 
     img {

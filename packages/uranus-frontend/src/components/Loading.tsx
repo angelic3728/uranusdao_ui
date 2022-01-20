@@ -29,6 +29,6 @@ import { Image } from 'uranus-uikit'
 //   }
 // `
 const Loading = () => {
-  return <Image src="/images/loadingDiamond.gif" width={147} height={150} />
+  return <Image src="/images/loading.gif" width={147} height={150} />
 }
 export default Loading

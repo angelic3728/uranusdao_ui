@@ -32,7 +32,7 @@ export const roundnessVariants = {
 export const styleVariants = {
   [variants.PRIMARY]: {
     backgroundColor: "primary",
-    color: "white",
+    color: "text",
   },
   [variants.SECONDARY]: {
     backgroundColor: "transparent",

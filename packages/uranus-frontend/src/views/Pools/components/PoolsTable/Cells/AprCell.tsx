@@ -29,9 +29,6 @@ const AprCell: React.FC<AprCellProps> = ({ pool }) => {
   return (
     <StyledCell role="cell">
       <CellContent>
-        <Text fontSize="12px" color="textSubtle" textAlign="left">
-          {isBlindMode() ? t('TAN Allocation') : t('APR')}
-        </Text>
         {isBlindMode() ? "/ Block" : <Apr pool={pool} stakedBalance={stakedBalance} showIcon={!isMobile} />}
       </CellContent>
     </StyledCell>

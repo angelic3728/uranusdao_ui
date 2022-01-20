@@ -35,6 +35,17 @@ import ToggleView from './components/ToggleView/ToggleView'
 import { DesktopColumnBlindModeSchema, DesktopColumnSchema } from './components/types'
 import FarmBackground from './components/FarmBackground'
 
+const Container = styled.div`
+    margin-left: 250px;
+    padding: 10px;
+    background: ${({ theme }) => theme.isDark
+            ? "linear-gradient(180deg, rgba(8, 15, 53, 0), rgba(0, 0, 10, 0.9)), linear-gradient(333deg, rgba(153, 207, 255, 0.2), rgba(180, 255, 217, 0.08)), radial-gradient(circle at 77% 89%, rgba(125, 163, 169, 0.8), rgba(125, 163, 169, 0) 50%), radial-gradient(circle at 15% 95%, rgba(125, 163, 169, 0.8), rgba(125, 163, 169, 0) 43%), radial-gradient(circle at 65% 23%, rgba(137, 151, 119, 0.4), rgba(137, 151, 119, 0) 70%), radial-gradient(circle at 10% 0%, rgba(187, 211, 204, 0.33), rgba(187,211,204,0) 35%), radial-gradient(circle at 11% 100%, rgba(131, 165, 203, 0.3), rgba(131, 165, 203, 0) 30%)"
+            : "linear-gradient(180deg, #AFCDE9 1%, #F7FBE7 100%)"};
+    background-color:${({ theme }) => theme.isDark
+            ? "#080f35"
+            : "#AFCDE9"};
+`
+
 const ControlContainer = styled.div`
   position: relative;
   z-index: 10;
@@ -159,7 +170,7 @@ const Farms: React.FC = () => {
 
   // const activeFarms = farmsLP.filter((farm) => farm.pid !== 0 && farm.multiplier !== '0X' && !isArchivedPid(farm.pid))
   // const inactiveFarms = farmsLP.filter((farm) => farm.pid !== 0 && farm.multiplier === '0X' && !isArchivedPid(farm.pid))
-  const activeFarms = farmsLP.filter(farm => farm.pid !== 0 && farm.pid !== 3) // FIXME temp show CRO/TAN and CRO/USDC with 0x
+  const activeFarms = farmsLP.filter(farm => farm.pid !== 0 && farm.pid !== 7) // FIXME temp show CRO/TAN and CRO/USDC with 0x
   const inactiveFarms = farmsLP.filter(() => false) // FIXME temp show nothing
   const archivedFarms = farmsLP.filter((farm) => isArchivedPid(farm.pid))
 
@@ -394,68 +405,9 @@ const Farms: React.FC = () => {
   }
 
   return (
-    <div style={{ marginLeft: '250px' }}>
+    <Container>
       <Toolbar />
-      <StyledPageHeader>
-        <FarmBackground />
-        <StyledHeading as="h1" scale="xxl" mb="20px" weight={500}>
-          {t('Crystal Farms')}
-        </StyledHeading>
-        <StyledHeading scale="md">{t('Our harvests are always bountiful.')}</StyledHeading>
-        <StyledHeading scale="md" mb="36px" mt="14px">
-          {t('Pick your farm and earn.')}
-        </StyledHeading>
-        <ControlContainer>
-          <ViewControls>
-            <ToggleView viewMode={viewMode} onToggle={(mode: ViewMode) => setViewMode(mode)} />
-            <ToggleWrapper>
-              <Toggle
-                id="staked-only-farms"
-                checked={stakedOnly}
-                onChange={() => setStakedOnly(!stakedOnly)}
-                scale="sm"
-              />
-              <Text color="white">{t('Staked only')}</Text>
-            </ToggleWrapper>
-            <FarmTabButtons hasStakeInFinishedFarms={stakedInactiveFarms.length > 0} />
-          </ViewControls>
-          <FilterContainer>
-            <LabelWrapper>
-              {/* <Text textTransform="uppercase">{t('Sort by')}</Text> */}
-              <Select
-                options={[
-                  {
-                    label: t('Hot'),
-                    value: 'hot',
-                  },
-                  {
-                    label: t('APR'),
-                    value: 'apr',
-                  },
-                  {
-                    label: t('Multiplier'),
-                    value: 'multiplier',
-                  },
-                  {
-                    label: t('Earned'),
-                    value: 'earned',
-                  },
-                  {
-                    label: t('Staked Liquidity'),
-                    value: 'liquidity',
-                  },
-                ].filter(x => !(isBlindMode() && (['liquidity', 'apr'].includes(x.value))))}
-                onOptionChange={handleSortOptionChange}
-              />
-            </LabelWrapper>
-            <LabelWrapper style={{ marginLeft: 16 }}>
-              {/* <Text textTransform="uppercase">{t('Search')}</Text> */}
-              <SearchInput onChange={handleChangeQuery} placeholder="Search" />
-            </LabelWrapper>
-          </FilterContainer>
-        </ControlContainer>
-      </StyledPageHeader>
-      <Page style={{ marginTop: '-90px', position: 'relative' }}>
+      <Page style={{ marginTop: '20px', position: 'relative' }}>
         {renderContent()}
         {account && !userDataLoaded && stakedOnly && (
           <Flex justifyContent="center">
@@ -464,7 +416,7 @@ const Farms: React.FC = () => {
         )}
         <div ref={observerRef} />
       </Page>
-    </div>
+    </Container>
   )
 }
 

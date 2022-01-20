@@ -74,7 +74,7 @@ export const mainnetTokens = {
 export const testnetTokens = {
   workbench: new Token(
     TESTNET,
-    '0x2996B1677460e6Fd2b76B4B42E341CA5861a0018',
+    '0x31A252c87183f16B1a33e0f865FCd0D7bB92d409',
     18,
     'WORKBENCH',
     'WORKBENCH',
@@ -98,7 +98,7 @@ export const testnetTokens = {
   ),
   tan: new Token(
     TESTNET,
-    '0x904Bd5a5AAC0B9d88A0D47864724218986Ad4a3a',
+    '0x523E5f7C31f05E32560C329E2Ea95DB9A17f8A20',
     18,
     'TAN',
     'TAN',

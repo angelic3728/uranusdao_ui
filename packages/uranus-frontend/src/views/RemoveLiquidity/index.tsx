@@ -8,8 +8,6 @@ import { Button, Text, AddIcon, ArrowDownIcon, CardBody, Slider, Box, Flex, useM
 import { RouteComponentProps } from 'react-router'
 import { BigNumber } from '@ethersproject/bignumber'
 import { useTranslation } from 'contexts/Localization'
-import MoleTopRow from 'views/Swap/components/MoleTopRow'
-
 import { AutoColumn, ColumnCenter } from '../../components/Layout/Column'
 import TransactionConfirmationModal, { ConfirmationModalContent } from '../../components/TransactionConfirmationModal'
 import CurrencyInputPanel from '../../components/CurrencyInputPanel'
@@ -456,7 +454,6 @@ export default function RemoveLiquidity({
 
   return (
     <Page>
-      <MoleTopRow />
       <AppBody>
         <AppHeader
           backTo="/pool"

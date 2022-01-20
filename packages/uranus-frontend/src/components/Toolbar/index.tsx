@@ -21,10 +21,6 @@ const Toolbar: React.FunctionComponent = () => {
 	return (
         <>
             <ToolbarWrapper>
-            	<Button variant='tertiary' mr="5px" scale="sm">
-            		<FaIcons.FaInfoCircle />
-            		<span>SPA</span>
-            	</Button>
             	<UserMenu />
             	<ThemeSwitcher isDark={isDark} toggleTheme={toggleTheme} />
             </ToolbarWrapper>

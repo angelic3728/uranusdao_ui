@@ -5,7 +5,6 @@ import { Text, Flex, CardBody, CardFooter, Button, AddIcon } from 'uranus-uikit'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'contexts/Localization'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
-import MoleTopRow from 'views/Swap/components/MoleTopRow'
 import FullPositionCard from '../../components/PositionCard'
 import { useTokenBalancesWithLoadingIndicator } from '../../state/wallet/hooks'
 import { usePairs } from '../../hooks/usePairs'
@@ -15,7 +14,7 @@ import { AppHeader, AppBody } from '../../components/App'
 import Page from '../Page'
 
 const Body = styled(CardBody)`
-  background-color: ${({ theme }) => theme.colors.dropdownDeep};
+  background-color: ${({ theme }) => theme.colors.background};
 `
 
 export default function Pool() {
@@ -85,7 +84,6 @@ export default function Pool() {
 
   return (
     <Page>
-      <MoleTopRow />
       <AppBody>
         <AppHeader title={t('Your Liquidity')} subtitle={t('Managed your unstaked Liquidity')} />
         <Body>

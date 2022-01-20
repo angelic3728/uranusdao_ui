@@ -117,7 +117,7 @@ const Row: React.FunctionComponent<RowPropsWithLoading> = (props) => {
                 return (
                   <td key={key}>
                     <CellInner>
-                      <CellLayout label={t('APR')}>
+                      <CellLayout>
                         <Apr {...props.apr} hideButton={isSmallerScreen} />
                       </CellLayout>
                     </CellInner>
@@ -127,7 +127,7 @@ const Row: React.FunctionComponent<RowPropsWithLoading> = (props) => {
                 return (
                   <td key={key}>
                     <CellInner>
-                      <CellLayout label={t('TAN Allocation')}>
+                      <CellLayout>
                         <TanAllocation {...props.allocation} />
                       </CellLayout>
                     </CellInner>
@@ -137,7 +137,7 @@ const Row: React.FunctionComponent<RowPropsWithLoading> = (props) => {
                 return (
                   <td key={key}>
                     <CellInner>
-                      <CellLayout label={t(tableSchema[columnIndex].label)}>
+                      <CellLayout>
                         {React.createElement(cells[key], { ...props[key], userDataReady })}
                       </CellLayout>
                     </CellInner>
@@ -161,17 +161,17 @@ const Row: React.FunctionComponent<RowPropsWithLoading> = (props) => {
           </tr>
           <tr>
             <EarnedMobileCell>
-              <CellLayout label={t('Earned')}>
+              <CellLayout>
                 <Earned {...props.earned} userDataReady={userDataReady} />
               </CellLayout>
             </EarnedMobileCell>
             {isBlindMode() ? (<AprMobileCell>
-              <CellLayout label={t('TAN Allocation')}>
+              <CellLayout>
                 <TanAllocation {...props.allocation} />
               </CellLayout>
             </AprMobileCell>
             ) : (<AprMobileCell>
-              <CellLayout label={t('APR')}>
+              <CellLayout>
                 <Apr {...props.apr} hideButton />
               </CellLayout>
             </AprMobileCell>)}

@@ -95,10 +95,15 @@ const ActiveMenuItemLinks = styled(Link)`
     align-items: center;
     padding: 0px;
     font-size: 20px;
-    text-decoration: none;
     color: ${({ theme }) => theme.isDark
+            ? '#FFFFFF'
+            : '#000000'};
+    text-decoration:underline;
+    &:hover {
+        color: ${({ theme }) => theme.isDark
             ? '#2EE6F1'
             : '#000080'};
+    }
 `
 
 const Devider = styled.div`

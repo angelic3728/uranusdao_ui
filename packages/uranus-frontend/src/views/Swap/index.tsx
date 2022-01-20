@@ -40,7 +40,6 @@ import { computeTradePriceBreakdown, warningSeverity } from '../../utils/prices'
 import CircleLoader from '../../components/Loader/CircleLoader'
 import Page from '../Page'
 import SwapWarningModal from './components/SwapWarningModal'
-import MoleTopRow from './components/MoleTopRow'
 
 const Label = styled(Text)`
   font-size: 12px;
@@ -52,7 +51,7 @@ const SwapBody = styled(AppBody)<{ show: boolean; contentHeight: number }>`
   height: ${({ show, contentHeight }) => (show ? `${contentHeight + 109}px` : `${contentHeight}px`)};
   transition: height 300ms ease-in-out;
   background-color: ${({ theme }) => theme.colors.background};
-  border-radius: 18px;
+  border-radius: 12px;
 `
 const SwapContent = styled.div`
   background-color: ${({ theme }) => theme.colors.background};
@@ -323,7 +322,6 @@ export default function Swap({ history }: RouteComponentProps) {
 
   return (
     <Page>
-      <MoleTopRow />
       <SwapBody show={Boolean(trade)} contentHeight={contentHeight}>
         <SwapContent ref={contentRef}>
           <AppHeader title={t('Bling Swap')} subtitle={t('Trade tokens instantly and with low fees')} />
@@ -468,6 +466,9 @@ export default function Swap({ history }: RouteComponentProps) {
                         onPresentConfirmModal()
                       }
                     }}
+                    style={{
+                      background:"red"
+                    }}
                     width="48%"
                     id="swap-button"
                     disabled={
@@ -498,6 +499,9 @@ export default function Swap({ history }: RouteComponentProps) {
                     }
                   }}
                   id="swap-button"
+                  style={{
+                      backgroundColor:`${({ theme }) => theme.colors.background}`
+                  }}
                   width="100%"
                   scale="lg"
                   disabled={!isValid || (priceImpactSeverity > 3 && !isExpertMode) || !!swapCallbackError}

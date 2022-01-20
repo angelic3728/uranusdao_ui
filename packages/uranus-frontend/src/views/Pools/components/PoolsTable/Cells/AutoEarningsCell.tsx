@@ -65,9 +65,6 @@ const AutoEarningsCell: React.FC<AutoEarningsCellProps> = ({ pool, account, user
   return (
     <StyledCell role="cell">
       <CellContent>
-        <Text fontSize="12px" color="textSubtle" textAlign="left">
-          {labelText}
-        </Text>
         {!userDataLoaded && account || isBlindMode() ? (
           <Skeleton width="80px" height="16px" />
         ) : (
@@ -79,7 +76,7 @@ const AutoEarningsCell: React.FC<AutoEarningsCellProps> = ({ pool, account, user
                   mt="4px"
                   bold={!isMobile}
                   fontSize={isMobile ? '14px' : '16px'}
-                  color={hasEarnings ? 'primary' : 'textDisabled'}
+                  color={hasEarnings ? 'text' : 'textDisabled'}
                   decimals={hasEarnings ? 5 : 1}
                   value={hasEarnings ? earningTokenBalance : 0}
                 />

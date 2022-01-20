@@ -34,8 +34,8 @@ const ToggleView: React.FunctionComponent<ToggleViewProps> = ({ viewMode, onTogg
   return (
     <Container>
       <StyledTag variant={viewMode === ViewMode.TABLE ? 'primary' : 'textDisabled'}>
-        <IconButton variant="text" scale="sm" id="clickFarmTableView" onClick={() => handleToggle(ViewMode.TABLE)}>
-          <ListViewIcon color="white" />
+        <IconButton variant="primary" scale="sm" id="clickFarmTableView" onClick={() => handleToggle(ViewMode.TABLE)}>
+          <ListViewIcon color="black" />
         </IconButton>
       </StyledTag>
       <StyledTag variant={viewMode === ViewMode.CARD ? 'primary' : 'textDisabled'}>

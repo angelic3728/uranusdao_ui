@@ -15,7 +15,7 @@ const MyFarms = () => {
   const { account } = useWeb3React()
   const tanPrice = usePriceTanUsdc()
   // const activeFarms = farmsLP.filter((farm) => farm.pid !== 0 && farm.multiplier !== '0X' && !isArchivedPid(farm.pid))
-  const activeFarms = farmsLP.filter(farm => farm.pid !== 0 && farm.pid !== 3) // FIXME temp show CRO/TAN and CRO/USDC with 0x
+  const activeFarms = farmsLP.filter(farm => farm.pid !== 0 && farm.pid !== 7) // FIXME temp show CRO/TAN and CRO/USDC with 0x
 
   const farmsList = useCallback(
     (farmsToDisplay: DeserializedFarm[]): FarmWithStakedValue[] => {

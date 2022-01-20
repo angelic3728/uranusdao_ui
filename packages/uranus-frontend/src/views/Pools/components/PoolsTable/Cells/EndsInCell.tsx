@@ -57,9 +57,6 @@ const EndsInCell: React.FC<FinishCellProps> = ({ pool }) => {
   return (
     <StyledCell role="cell">
       <CellContent>
-        <Text fontSize="12px" color="textSubtle" textAlign="left">
-          {hasPoolStarted || !shouldShowBlockCountdown ? t('Ends in') : t('Starts in')}
-        </Text>
         {showLoading ? <Skeleton width="80px" height="16px" /> : renderBlocks}
       </CellContent>
     </StyledCell>

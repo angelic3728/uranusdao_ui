@@ -31,7 +31,7 @@ const UserMenu = () => {
 
   if (!account) {
     return (
-      <ConnectWalletButton variant='tertiary' mr="5px" scale="sm" />
+      <ConnectWalletButton variant='primary' mr="5px" scale="sm" />
     )
   }
 
@@ -42,11 +42,6 @@ const UserMenu = () => {
       <UserMenuItem as="button" onClick={onPresentTransactionModal}>
         {t('Transactions')}
       </UserMenuItem>
-      <StyledLink href="/dashboard" color="text">
-        <UserMenuItem as="button">
-          {t('Dashboard')}
-        </UserMenuItem>
-      </StyledLink>
       <UserMenuDivider />
       <UserMenuItem as="button" onClick={logout}>
         <Flex alignItems="center" justifyContent="space-between" width="100%">

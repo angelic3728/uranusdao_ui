@@ -11,7 +11,7 @@ const getStepNumberFontColor = ({ theme, status }: StatusProps) => {
   if (status === "current") {
     return theme.colors.invertedContrast;
   }
-  return theme.colors.textDisabled;
+  return theme.colors.grey;
 };
 
 const StyledStep = styled(Flex)`
