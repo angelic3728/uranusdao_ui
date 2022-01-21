@@ -339,7 +339,7 @@
         "type": "address"
       }
     ],
-    "name": "pendingVVS",
+    "name": "pendingTAN",
     "outputs": [
       {
         "internalType": "uint256",

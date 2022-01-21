@@ -48,11 +48,12 @@ const TableBody = styled.tbody`
 
 const TableHead = styled.tr`
   & td {
-      padding:10px 0px;
-      font-size: 13px!important;
+      padding:24px 0px;
+      font-size: 17px!important;
       vertical-align: middle;
       color: ${({ theme }) => theme.colors.text}
   }
+  border-bottom: 2px solid ${({ theme }) => theme.colors.disabled}
 `
 
 const TableContainer = styled.div`
@@ -111,7 +112,7 @@ const FarmTable: React.FC<ITableProps> = (props) => {
         <ScrollButtonContainer>
           <Button variant="text" onClick={scrollToTop}>
             {t('To Top')}
-            <ChevronUpIcon color="primary" />
+            <ChevronUpIcon color="text" />
           </Button>
         </ScrollButtonContainer>
       </TableContainer>

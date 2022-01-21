@@ -93,7 +93,7 @@ export default function Pool() {
               <Text color="textSubtle" mb="8px">
                 {t("Can't find a liquidity pool deposit?")}
               </Text>
-              <Button id="import-pool-link" variant="secondary" scale="sm" as={Link} to="/find">
+              <Button id="import-pool-link" variant="primary" scale="sm" as={Link} to="/find">
                 {t('Find other LP tokens manually')}
               </Button>
             </Flex>
