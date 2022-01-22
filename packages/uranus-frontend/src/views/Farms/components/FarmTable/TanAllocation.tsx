@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { TAN_PER_BLOCK } from 'config'
+import { supplyTAN } from 'config/constants/supplyTAN'
 
 export interface AllocationProps {
   poolWeight: number
@@ -25,6 +25,8 @@ const AprWrapper = styled.div`
 const TanAllocation: React.FC<AllocationProps> = ({
   poolWeight
 }) => {
+  const TAN_PER_BLOCK = Number(supplyTAN())
+
   return <Container>
     <AprWrapper>{(poolWeight * TAN_PER_BLOCK).toLocaleString('en-US', { maximumFractionDigits: 2 })}/ Block</AprWrapper>
   </Container>

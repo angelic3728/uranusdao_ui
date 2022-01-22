@@ -6,7 +6,8 @@ import { DeserializedFarm } from 'state/types'
 import { getExplorerLink, isBlindMode } from 'utils'
 import { useTranslation } from 'contexts/Localization'
 import ExpandableSectionButton from 'components/ExpandableSectionButton'
-import { BASE_ADD_LIQUIDITY_URL, TAN_PER_BLOCK } from 'config'
+import { BASE_ADD_LIQUIDITY_URL } from 'config'
+import { supplyTAN } from 'config/constants/supplyTAN'
 import { getAddress } from 'utils/addressHelpers'
 import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
 import { getBalanceAmount } from 'utils/formatBalance'
@@ -66,6 +67,8 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, displayApr, removed, tanPrice
   const addLiquidityUrl = `${BASE_ADD_LIQUIDITY_URL}/${liquidityUrlPathParts}`
   const lpAddress = getAddress(farm.lpAddresses)
   const isPromotedFarm = farm.token.symbol === 'TAN'
+
+  const TAN_PER_BLOCK = Number(supplyTAN())
 
   return (
     <StyledCard isActive={false}>

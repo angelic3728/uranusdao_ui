@@ -12,7 +12,7 @@
         "type": "address"
       },
       {
-        "internalType": "contract ICraftsman",
+        "internalType": "contract _ICraftsman",
         "name": "_craftsman",
         "type": "address"
       },
@@ -352,7 +352,7 @@
   },
   {
     "inputs": [],
-    "name": "calculateTotalpendingTANRewards",
+    "name": "calculateTotalPendingTANRewards",
     "outputs": [
       {
         "internalType": "uint256",
@@ -381,7 +381,7 @@
     "name": "craftsman",
     "outputs": [
       {
-        "internalType": "contract ICraftsman",
+        "internalType": "contract _ICraftsman",
         "name": "",
         "type": "address"
       }
@@ -680,7 +680,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "tanAtLastUserAction",
+        "name": "TANAtLastUserAction",
         "type": "uint256"
       },
       {
