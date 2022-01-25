@@ -163,8 +163,8 @@ const Farms: React.FC = () => {
 
   // Users with no wallet connected should see 0 as Earned amount
   // Connected users should see loading indicator until first userData has loaded
-  const userDataReady = !account || (!!account && userDataLoaded)
 
+  const userDataReady = !account || (!!account && userDataLoaded)
   const [stakedOnly, setStakedOnly] = useUserFarmStakedOnly(isActive)
 
   // const activeFarms = farmsLP.filter((farm) => farm.pid !== 0 && farm.multiplier !== '0X' && !isArchivedPid(farm.pid))

@@ -55,7 +55,6 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({
   const location = useLocation()
   const lpPrice = useLpTokenPrice(lpSymbol)
   const tanPrice = usePriceTanUsdc()
-
   const isApproved = account && allowance && allowance.isGreaterThan(0)
 
   const lpAddress = getAddress(lpAddresses)
@@ -202,21 +201,6 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({
     )
   }
 
-  if (!userDataReady) {
-    return (
-      <ActionContainer>
-        <ActionTitles>
-          <Text textTransform="uppercase" fontSize="12px">
-            {t('Start Farming')}
-          </Text>
-        </ActionTitles>
-        <ActionContent>
-          <Skeleton width={180} marginBottom={28} marginTop={14} />
-        </ActionContent>
-      </ActionContainer>
-    )
-  }
-
   return (
     <ActionContainer>
       <ActionTitles>
@@ -225,7 +209,7 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({
         </Text>
       </ActionTitles>
       <ActionContent>
-        <Button width="100%" disabled={requestedApproval} onClick={handleApprove} variant="secondary">
+        <Button width="100%" disabled={requestedApproval} onClick={handleApprove}>
           {t('Enable')}
         </Button>
       </ActionContent>
