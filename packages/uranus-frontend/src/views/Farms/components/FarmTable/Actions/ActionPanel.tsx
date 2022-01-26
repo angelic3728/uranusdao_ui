@@ -43,7 +43,7 @@ const collapseAnimation = keyframes`
   }
 `
 
-const Container = styled.div<{ expanded; background }>`
+const Container = styled.div<{ expanded }>`
   animation: ${({ expanded }) =>
     expanded
       ? css`
@@ -53,11 +53,12 @@ const Container = styled.div<{ expanded; background }>`
           ${collapseAnimation} 300ms linear forwards
         `};
   overflow: hidden;
-  background: ${({ theme, background }) => background ?? theme.colors.background};
+  background: ${({ theme }) => theme.colors.dropdown};
   display: flex;
   width: 100%;
   flex-direction: column-reverse;
   padding: 24px;
+  border-bottom: 2px solid ${({ theme }) => theme.colors.disabled};
 
   ${({ theme }) => theme.mediaQueries.lg} {
     flex-direction: row;
@@ -67,7 +68,7 @@ const Container = styled.div<{ expanded; background }>`
 
 const StyledLinkExternal = styled(LinkExternal)`
   font-weight: 400;
-  color: ${({ theme }) => theme.colors.darkBlue};
+  color: ${({ theme }) => theme.colors.text};
 `
 
 const StakeContainer = styled.div`
@@ -159,19 +160,19 @@ const ActionPanel: React.FunctionComponent<ActionPanelProps> = ({
   const info = `/info/farm/${lpAddress}`
 
   return (
-    <Container expanded={expanded} background="#F4F5F1">
+    <Container expanded={expanded}>
       <InfoContainer>
         {isActive && (
           <StakeContainer>
-            <StyledLinkExternal color="blue" href={`/add/${liquidityUrlPathParts}`}>
+            <StyledLinkExternal href={`/add/${liquidityUrlPathParts}`}>
               {t('Get %symbol%', { symbol: lpLabel })}
             </StyledLinkExternal>
           </StakeContainer>
         )}
-        <StyledLinkExternal color="blue" href={bsc}>
+        <StyledLinkExternal href={bsc}>
           {t('View Contract')}
         </StyledLinkExternal>
-        {!isBlindMode() && <StyledLinkExternal color="blue" href={info}>
+        {!isBlindMode() && <StyledLinkExternal href={info}>
           {t('See Pair Info')}
         </StyledLinkExternal>}
         {/* <TagsContainer>

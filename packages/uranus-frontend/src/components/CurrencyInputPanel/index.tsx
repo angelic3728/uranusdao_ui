@@ -33,7 +33,7 @@ const InputPanel = styled.div<{ hideInput?: boolean }>`
   display: flex;
   flex-flow: column nowrap;
   position: relative;
-  border-radius: ${({ hideInput }) => (hideInput ? '8px' : '20px')};
+  border-radius: 8px;
   background-color: ${({ theme }) => theme.colors.primary};
   z-index: 1;
 `

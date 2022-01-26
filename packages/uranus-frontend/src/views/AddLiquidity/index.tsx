@@ -372,11 +372,11 @@ export default function AddLiquidity({
               <>
                 <LightCard padding="0px" borderRadius="12px">
                   <RowBetween padding="1rem">
-                    <Text fontSize="14px">
+                    <Text fontSize="14px" width="100%" textAlign="center" padding="5px 0px">
                       {noLiquidity ? t('Initial prices and pool share') : t('Prices & pool share')}
                     </Text>
                   </RowBetween>{' '}
-                  <LightCard padding="1rem" borderRadius="12px">
+                  <LightCard padding="1rem" borderRadius="0px 0px 8px 8px">
                     <PoolPriceBar
                       currencies={currencies}
                       poolTokenPercentage={poolTokenPercentage}

@@ -13,15 +13,12 @@ const Icons = {
 
 const MessageContainer = styled.div<MessageProps>`
   display: flex;
-  background-color: gray;
   padding: 16px;
-  border-radius: 16px;
-  border: solid 1px;
+  border-radius: 8px;
 
   ${space}
-  ${systemVariant({
-    variants,
-  })}
+  background-color: ${({ theme }) => theme.colors.primary};
+  border-color: "#FCE673";
 `;
 
 const Message: React.FC<MessageProps> = ({ children, variant, icon, ...props }) => {
