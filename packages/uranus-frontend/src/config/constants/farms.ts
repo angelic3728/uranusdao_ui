@@ -11,7 +11,7 @@ const farms: SerializedFarmConfig[] = [
     pid: 0,
     lpSymbol: 'TAN',
     lpAddresses: {
-      338: '0x20b084CeC95B77C035B99F2fB5c616593dCD898E',
+      338: '0x523E5f7C31f05E32560C329E2Ea95DB9A17f8A20',
       25: '0x2D03bECE6747ADC00E1a131BBA1469C15fD11e03',
     },
     token: serializedTokens.workbench,

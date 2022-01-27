@@ -201,6 +201,21 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({
     )
   }
 
+  if (!userDataReady) {
+    return (
+      <ActionContainer>
+        <ActionTitles>
+          <Text textTransform="uppercase" fontSize="12px">
+            {t('Start Farming')}
+          </Text>
+        </ActionTitles>
+        <ActionContent>
+          <Skeleton width={180} marginBottom={28} marginTop={14} />
+        </ActionContent>
+      </ActionContainer>
+    )
+  }
+
   return (
     <ActionContainer>
       <ActionTitles>

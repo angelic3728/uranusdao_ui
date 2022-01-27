@@ -29,7 +29,6 @@ const getDisabledStyles = ({ $isLoading, theme }: TransientButtonProps) => {
       box-shadow: none;
       color: ${theme.colors.textDisabled};
       cursor: not-allowed;
-      height:60px;
     }
   `;
 };
