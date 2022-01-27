@@ -2,12 +2,12 @@ import styled from 'styled-components'
 
 export const ActionContainer = styled.div`
   padding: 16px;
-  border: 2px solid ${({ theme }) => theme.colors.grey};
-  border-radius: 16px;
+  border: 2px solid ${({ theme }) => theme.colors.cardBorder};
+  border-radius: 8px;
   flex-grow: 1;
   flex-basis: 0;
   margin-bottom: 16px;
-  background: ${({ theme }) => theme.colors.white};
+  background: ${({ theme }) => theme.colors.backgroundAlt};
 
   ${({ theme }) => theme.mediaQueries.sm} {
     margin-left: 12px;

@@ -120,7 +120,7 @@ const Sidebar: React.FunctionComponent = () => {
         <>
             <SidebarMenu close={close}>
                 <ImageWrapper>
-                    <img src={theme.isDark ? "/images/logos/sidebar_logo_dark.png" : "/images/logos/sidebar_logo.png"} alt="ifo bunny" width="100px" />
+                    <img src={theme.isDark ? "/images/logos/logo-sidebar-dark.svg" : "/images/logos/logo-sidebar.svg"} alt="ifo bunny" width="100px" />
                 </ImageWrapper>
                 <MenuWrapper>
                 {SidebarData.map((item, index) => {

@@ -170,7 +170,7 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({ pool, userDataLoa
           </Text>
         </ActionTitles>
         <ActionContent>
-          <Button width="100%" disabled={requestedApproval} onClick={handleApprove} variant="secondary">
+          <Button width="100%" disabled={requestedApproval} onClick={handleApprove} variant="primary">
             {t('Enable')}
           </Button>
         </ActionContent>
@@ -210,22 +210,22 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({ pool, userDataLoa
             />}
           </Flex>
           <IconButtonWrapper>
-            <IconButton variant="secondary" onClick={onUnstake} mr="6px">
-              <MinusIcon color="primary" width="14px" />
+            <IconButton variant="tertiary" onClick={onUnstake} mr="6px">
+              <MinusIcon color="text" width="14px" />
             </IconButton>
             {reachStakingLimit ? (
               <span ref={targetRef}>
-                <IconButton variant="secondary" disabled>
+                <IconButton variant="tertiary" disabled>
                   <AddIcon color="textDisabled" width="24px" height="24px" />
                 </IconButton>
               </span>
             ) : (
               <IconButton
-                variant="secondary"
+                variant="tertiary"
                 onClick={stakingTokenBalance.gt(0) ? onStake : onPresentTokenRequired}
                 disabled={isFinished}
               >
-                <AddIcon color="primary" width="14px" />
+                <AddIcon color="text" width="14px" />
               </IconButton>
             )}
           </IconButtonWrapper>
@@ -249,7 +249,7 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({ pool, userDataLoa
         <Button
           width="100%"
           onClick={stakingTokenBalance.gt(0) ? onStake : onPresentTokenRequired}
-          variant="secondary"
+          variant="primary"
           disabled={isFinished}
         >
           {t('Stake')}

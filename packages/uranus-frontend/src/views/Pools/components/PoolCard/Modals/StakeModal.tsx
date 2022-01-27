@@ -82,6 +82,9 @@ const StakeModal: React.FC<StakeModalProps> = ({
     : userData.stakingTokenBalance.lt(fullDecimalStakeAmount)
 
   const usdValueStaked = new BigNumber(stakeAmount).times(stakingTokenPrice)
+  //------------------------------------------------------------------
+  // console.log(stakingTokenPrice)
+  
   const formattedUsdValueStaked = !usdValueStaked.isNaN() && formatNumber(usdValueStaked.toNumber())
 
   const interestBreakdown = getInterestBreakdown({
