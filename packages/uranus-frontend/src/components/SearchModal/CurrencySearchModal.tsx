@@ -31,6 +31,7 @@ const Footer = styled.div`
 const StyledModalContainer = styled(ModalContainer)`
   max-width: 420px;
   width: 100%;
+  border-radius: 8px;
 `
 
 const StyledModalBody = styled(ModalBody)`

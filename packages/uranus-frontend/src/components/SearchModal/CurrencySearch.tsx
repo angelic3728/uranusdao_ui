@@ -30,7 +30,8 @@ interface CurrencySearchProps {
 const swapSound = new Audio('swap.mp3')
 
 const StyledInput = styled(Input)`
-  background: ${({ theme }) => theme.colors.white};
+  background: ${({ theme }) => theme.colors.input};
+  border-radius: 8px
 `
 
 function CurrencySearch({
