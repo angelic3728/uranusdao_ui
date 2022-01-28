@@ -87,7 +87,7 @@ const Alert: React.FC<AlertProps> = ({ title, children, variant, onClick }) => {
         <Text fontSize="13px" fontWeight="600" color='text'>
           {title}
         </Text>
-        {typeof children === "string" ? <Text as="p" color='textSubtle'>{children}</Text> : children}
+        {typeof children === "string" ? <Text as="p" color='text'>{children}</Text> : children}
       </Details>
       {onClick && (
         <CloseHandler>
