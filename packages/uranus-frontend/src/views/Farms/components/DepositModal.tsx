@@ -134,7 +134,7 @@ const DepositModal: React.FC<DepositModalProps> = ({
         </AnnualRoiContainer>}
       </Flex>
       <ModalActions>
-        <Button variant="secondary" onClick={onDismiss} width="100%" disabled={pendingTx}>
+        <Button variant="primary" onClick={onDismiss} width="100%" disabled={pendingTx}>
           {t('Cancel')}
         </Button>
         <Button

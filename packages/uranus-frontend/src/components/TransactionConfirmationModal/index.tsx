@@ -19,6 +19,7 @@ import { registerToken } from 'utils/wallet'
 import { useTranslation } from 'contexts/Localization'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { wrappedCurrency } from 'utils/wrappedCurrency'
+import useTheme from 'hooks/useTheme'
 import { RowFixed } from '../Layout/Row'
 import { AutoColumn, ColumnCenter } from '../Layout/Column'
 import { getExplorerLink } from '../../utils'
@@ -39,6 +40,7 @@ const ConfirmedIcon = styled(ColumnCenter)`
 
 function ConfirmationPendingContent({ pendingText }: { pendingText: string }) {
   const { t } = useTranslation()
+  const { theme } = useTheme()
   return (
     <Wrapper>
       <ConfirmedIcon>
@@ -50,13 +52,13 @@ function ConfirmationPendingContent({ pendingText }: { pendingText: string }) {
           {t('Waiting For Confirmation')}
         </Text>
         <AutoColumn justify="center" marginBottom="30px">
-          <Text bold small textAlign="center" fontSize="16px" fontWeight="400" color="darkGrey">
+          <Text bold small textAlign="center" fontSize="16px" fontWeight="400" color="textSubtle">
             {pendingText}
           </Text>
         </AutoColumn>
-        <Box padding="18px" background="#F0F8F9" borderRadius="12px" width="325px">
+        <Box padding="18px" background={theme.colors.primary} borderRadius="12px" width="325px">
           <InlineImage src="/images/exclamationPoint.svg" height={22} width={22} />
-          <Text small color="black" textAlign="center" fontSize="13px" display="inline-block">
+          <Text small color={theme.colors.textSubtle} textAlign="center" fontSize="13px" display="inline-block">
             {t('Please confirm this transaction in your wallet')}
           </Text>
         </Box>
@@ -80,6 +82,8 @@ function TransactionSubmittedContent({
 
   const { t } = useTranslation()
 
+  const { theme } = useTheme()
+
   const token: Token | undefined = wrappedCurrency(currencyToAdd, chainId)
 
   return (
@@ -100,7 +104,7 @@ function TransactionSubmittedContent({
               fontWeight="400"
               fontSize="16px"
             >
-              {t('View on Cronos Explorer')}
+              <Text style={{textDecorationLine: 'underline'}}>{t('View on Cronos Explorer')}</Text>
             </Link>
           )}
           {/* {currencyToAdd && library?.provider?.isMetaMask && (
@@ -117,7 +121,7 @@ function TransactionSubmittedContent({
             </Button>
           )} */}
           <Button onClick={onDismiss} marginTop="10px" width="100%">
-            <Text fontWeight="600px" color="white" fontSize="16px">
+            <Text fontWeight="600px" color={theme.colors.text} fontSize="16px">
               {t('Close')}
             </Text>
           </Button>
