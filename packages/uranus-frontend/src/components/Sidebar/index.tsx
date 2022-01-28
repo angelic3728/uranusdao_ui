@@ -70,8 +70,8 @@ const MenuItemLinks = styled(Link)`
             : '#000000'};
     &:hover {
         color: ${({ theme }) => theme.isDark
-            ? '#2EE6F1'
-            : '#000080'};
+            ? '#1467C6'
+            : '#1467C6'};
 `
 
 const MenuItemAnchor = styled.a`
@@ -85,8 +85,8 @@ const MenuItemAnchor = styled.a`
             : '#000000'};
     &:hover {
         color: ${({ theme }) => theme.isDark
-            ? '#2EE6F1'
-            : '#000080'};
+            ? '#1467C6'
+            : '#1467C6'};
     }
 `
 
@@ -96,13 +96,13 @@ const ActiveMenuItemLinks = styled(Link)`
     padding: 0px;
     font-size: 20px;
     color: ${({ theme }) => theme.isDark
-            ? '#FFFFFF'
-            : '#000000'};
+            ? '#1467C6'
+            : '#1467C6'};
     text-decoration:underline;
     &:hover {
         color: ${({ theme }) => theme.isDark
-            ? '#2EE6F1'
-            : '#000080'};
+            ? '#1467C6'
+            : '#1467C6'};
     }
 `
 
