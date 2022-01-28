@@ -25,7 +25,7 @@ function ConfirmAddModalBottom({
   return (
     <>
       <RowBetween>
-        <Text color="darkGrey" fontSize="14px">
+        <Text color="textSubtle" fontSize="14px">
           {t('%asset% Deposited', { asset: currencies[Field.CURRENCY_A]?.symbol })}
         </Text>
         <RowFixed>

@@ -13,3 +13,7 @@ export const supplyTAN = async (): Promise<number> => {
 
   return tanPerBlock
 }
+
+// export const supplyTAN = (): number => {
+//   return Number(process.env.REACT_APP_TAN_PER_BLOCK)
+// }

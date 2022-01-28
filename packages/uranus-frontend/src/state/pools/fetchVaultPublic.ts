@@ -11,7 +11,7 @@ export const fetchPublicVaultData = async () => {
       'getPricePerFullShare',
       'totalShares',
       'calculateHarvestTANRewards',
-      'calculateTotalpendingTANRewards',
+      'calculateTotalPendingTANRewards',
     ].map((method) => ({
       address: getTanVaultAddress(),
       name: method,
@@ -32,6 +32,7 @@ export const fetchPublicVaultData = async () => {
       estimatedTanBountyReward: new BigNumber(estimatedTanBountyReward.toString()).toJSON(),
       totalPendingTanHarvest: new BigNumber(totalPendingTanHarvest.toString()).toJSON(),
     }
+
   } catch (error) {
     return {
       totalShares: null,

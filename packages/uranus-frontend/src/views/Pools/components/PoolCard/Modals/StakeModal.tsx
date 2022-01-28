@@ -82,9 +82,6 @@ const StakeModal: React.FC<StakeModalProps> = ({
     : userData.stakingTokenBalance.lt(fullDecimalStakeAmount)
 
   const usdValueStaked = new BigNumber(stakeAmount).times(stakingTokenPrice)
-  //------------------------------------------------------------------
-  // console.log(stakingTokenPrice)
-  
   const formattedUsdValueStaked = !usdValueStaked.isNaN() && formatNumber(usdValueStaked.toNumber())
 
   const interestBreakdown = getInterestBreakdown({
@@ -198,7 +195,7 @@ const StakeModal: React.FC<StakeModalProps> = ({
       <Flex alignItems="center" justifyContent="space-between" mb="8px">
         <Text bold>{isRemovingStake ? t('Unstake') : t('Stake')}:</Text>
         <Flex alignItems="center" minWidth="70px">
-          <Image src={`/images/tokens/${stakingToken.address}.png`} width={24} height={24} alt={stakingToken.symbol} />
+          <Image src={`/images/tokens/${stakingToken.address}.svg`} width={24} height={24} alt={stakingToken.symbol} />
           <Text ml="4px" bold>
             {stakingToken.symbol}
           </Text>
@@ -270,7 +267,7 @@ const StakeModal: React.FC<StakeModalProps> = ({
       </Button>
       {!isRemovingStake && (
         <StyledLink external href={getTokenLink}>
-          <Button width="100%" mt="8px" variant="secondary">
+          <Button width="100%" mt="8px" variant="primary">
             {t('Get %symbol%', { symbol: stakingToken.symbol })}
           </Button>
         </StyledLink>

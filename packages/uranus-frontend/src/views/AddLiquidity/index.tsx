@@ -233,7 +233,7 @@ export default function AddLiquidity({
             {`${currencies[Field.CURRENCY_A]?.symbol}/${currencies[Field.CURRENCY_B]?.symbol} Pool Tokens`}
           </Text>
         </Row>
-        <Text small textAlign="left" my="24px" color="darkGrey">
+        <Text small textAlign="left" my="24px" color="gray">
           {t('Output is estimated. If the price changes by more than %slippage%% your transaction will revert.', {
             slippage: allowedSlippage / 100,
           })}
