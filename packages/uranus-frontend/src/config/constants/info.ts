@@ -10,7 +10,7 @@ export const BUYBACK_FEE = 0.0005
 export const BASE_URL = 'https://uranus.finance'
 // export const BASE_EXPLORER_URL = 'https://cronos.crypto.org/explorer'
 
-export const TAN_FINANCE_START = 1636354800 // FIXME start time
+export const TAN_FINANCE_START = 1643046369 // FIXME start time
 export const ONE_DAY_UNIX = 86400 // 24h * 60m * 60s
 export const ONE_HOUR_SECONDS = 3600
 

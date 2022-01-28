@@ -8,6 +8,7 @@ import { computeSlippageAdjustedAmounts, computeTradePriceBreakdown } from 'util
 import { AutoColumn } from 'components/Layout/Column'
 import QuestionHelper from 'components/QuestionHelper'
 import { RowBetween, RowFixed } from 'components/Layout/Row'
+import useTheme from 'hooks/useTheme'
 import FormattedPriceImpact from './FormattedPriceImpact'
 import SwapRoute from './SwapRoute'
 
@@ -18,7 +19,7 @@ function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippag
   const slippageAdjustedAmounts = computeSlippageAdjustedAmounts(trade, allowedSlippage)
 
   return (
-    <AutoColumn style={{ padding: '16px 16px' }}>
+    <AutoColumn style={{ padding: '0px 16px 0px 15px' }}>
       <RowBetween>
         <RowFixed>
           <Text fontSize="14px" color="textSubtle">
@@ -86,14 +87,15 @@ export function AdvancedSwapDetails({ trade }: AdvancedSwapDetailsProps) {
   const [allowedSlippage] = useUserSlippageTolerance()
 
   const showRoute = Boolean(trade && trade.route.path.length > 2)
+  const { theme } = useTheme()
   return (
-    <AutoColumn gap="0px">
+    <AutoColumn gap="0px" >
       {trade && (
         <>
           <TradeSummary trade={trade} allowedSlippage={allowedSlippage} />
           {showRoute && (
             <>
-              <RowBetween style={{ padding: '0 16px' }}>
+              <RowBetween style={{ padding: '0 16px 5px 16px' }}>
                 <span style={{ display: 'flex', alignItems: 'center' }}>
                   <Text fontSize="14px" color="textSubtle">
                     {t('Route')}

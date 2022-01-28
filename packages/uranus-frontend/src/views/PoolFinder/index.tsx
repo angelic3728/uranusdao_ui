@@ -25,10 +25,10 @@ enum Fields {
 }
 
 const StyledButton = styled(Button)`
-  background-color: ${({ theme }) => theme.colors.input};
+  background-color: ${({ theme }) => theme.colors.primary};
   color: ${({ theme }) => theme.colors.text};
   box-shadow: none;
-  border-radius: 16px;
+  border-radius: 8px;
 `
 
 export default function PoolFinder() {
@@ -152,7 +152,7 @@ export default function PoolFinder() {
                   <AutoColumn gap="sm" justify="center">
                     <Text textAlign="center">{t('You don’t have liquidity in this pool yet.')}</Text>
                     <StyledInternalLink to={`/add/${currencyId(currency0)}/${currencyId(currency1)}`}>
-                      <Text textAlign="center">{t('Add Liquidity')}</Text>
+                      <Text textAlign="center" style={{textDecorationLine: 'underline'}} color="textSubtle">{t('Add Liquidity')}</Text>
                     </StyledInternalLink>
                   </AutoColumn>
                 </LightCard>
@@ -162,7 +162,7 @@ export default function PoolFinder() {
                 <AutoColumn gap="sm" justify="center">
                   <Text textAlign="center">{t('No pool found.')}</Text>
                   <StyledInternalLink to={`/add/${currencyId(currency0)}/${currencyId(currency1)}`}>
-                    {t('Create pool.')}
+                    <Text color="textSubtle" style={{textDecorationLine: 'underline'}}>{t('Create pool.')}</Text>
                   </StyledInternalLink>
                 </AutoColumn>
               </LightCard>

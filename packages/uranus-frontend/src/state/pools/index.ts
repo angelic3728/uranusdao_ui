@@ -43,6 +43,7 @@ const initialState: PoolsState = {
 
 // Thunks
 export const fetchPoolsPublicDataAsync = (currentBlock: number) => async (dispatch, getState) => {
+  console.log("------------------------------")
   const blockLimits = await fetchPoolsBlockLimits()
   const totalStakings = await fetchPoolsTotalStaking()
 

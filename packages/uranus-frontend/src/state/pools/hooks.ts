@@ -83,7 +83,7 @@ export const useTanVault = () => {
       lastUserActionTime,
     },
   } = useSelector((state: State) => state.pools.tanVault)
-
+  
   const estimatedTanBountyReward = useMemo(() => {
     return new BigNumber(estimatedTanBountyRewardAsString)
   }, [estimatedTanBountyRewardAsString])

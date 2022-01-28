@@ -58,7 +58,7 @@ const ScrollableContainer = styled.div`
 
 const FullWidthButtonMenu = styled(ButtonMenu)<{ disabled?: boolean }>`
   width: 100%;
-  background: ${({ theme }) => theme.colors.lightAqua};
+  background: ${({ theme }) => theme.colors.tertiary};
 
   & > button {
     width: 100%;
@@ -68,7 +68,7 @@ const FullWidthButtonMenu = styled(ButtonMenu)<{ disabled?: boolean }>`
   opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
 `
 
-const ButtonStyles = { borderRadius: 20 }
+const ButtonStyles = { borderRadius: 4 }
 
 const RoiCalculatorModal: React.FC<RoiCalculatorModalProps> = ({
   onDismiss,
@@ -162,7 +162,7 @@ const RoiCalculatorModal: React.FC<RoiCalculatorModalProps> = ({
             onUserInput={onUserInput}
             switchEditingUnits={toggleEditingCurrency}
             onFocus={onBalanceFocus}
-            style={{ border: 'none', boxShadow: 'none' }}
+            style={{ border: 'none', boxShadow: 'none', borderRadius: '8px' }}
           />
           <Flex justifyContent="space-evenly" mt="10px">
             <Button
@@ -199,7 +199,7 @@ const RoiCalculatorModal: React.FC<RoiCalculatorModalProps> = ({
               {t('My Balance').toLocaleUpperCase()}
             </Button>
             <span ref={targetRef}>
-              <HelpIcon width="22px" height="22px" color="primary" mt="4px" />
+              <HelpIcon width="22px" height="22px" color="text" mt="4px"/>
             </span>
             {tooltipVisible && tooltip}
           </Flex>
