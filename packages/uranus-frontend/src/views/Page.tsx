@@ -47,7 +47,7 @@ const Page: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({ children, ...pro
       <SEOHead />
       <Toolbar />
       <StyledPage {...props}>
-        <SubNav />
+        {/* <SubNav /> */}
         {children}
         <Flex flexGrow={2} />
         {/* <Footer /> */}
