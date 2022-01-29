@@ -71,7 +71,7 @@ const farms: SerializedFarmConfig[] = [
     pid: 4,
     lpSymbol: 'TAN-USDC LP',
     lpAddresses: {
-      338: '0x3F3465b412B6017E20AF7ABFFAB67698de8cFa7a',
+      338: '0x95181325915978274aaE794d3d13162266f3cB7D',
       25: '0xbf62c67eA509E86F07c8c69d0286C0636C50270b',
     },
     token: serializedTokens.tan,
