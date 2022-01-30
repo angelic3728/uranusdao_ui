@@ -89,7 +89,6 @@ const fetchFarmsPrices = async (farms: SerializedFarm[]) => {
   // const croUsdcFarm = farms.find((farm) => farm.pid === 5) // FIXME pid for CRO/USDC
   const croUsdcFarm = farms.find((farm) => farm.token.symbol === tokens.usdc.symbol && farm.quoteToken.symbol === tokens.wcro.symbol) // FIXME pid for CRO/USDC
   const croPriceUsdc = croUsdcFarm.tokenPriceVsQuote ? BIG_ONE.div(croUsdcFarm.tokenPriceVsQuote) : BIG_ZERO
-
   const farmsWithPrices = farms.map((farm) => {
     const quoteTokenFarm = getFarmFromTokenSymbol(farms, farm.quoteToken.symbol)
     const tokenPriceUsdc = getFarmBaseTokenPrice(farm, quoteTokenFarm, croPriceUsdc)

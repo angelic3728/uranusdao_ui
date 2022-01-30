@@ -15,7 +15,7 @@ interface SerializedTokenList {
 export const mainnetTokens = {
   workbench: new Token(
     MAINNET,
-    '0x6a2d178585806De5A2e5E7F9acFCE44680637284',
+    process.env.REACT_APP_WORKBENCH_ADDRESS_MAINNET,
     18,
     'WORKBENCH',
     'WORKBENCH',
@@ -74,7 +74,7 @@ export const mainnetTokens = {
 export const testnetTokens = {
   workbench: new Token(
     TESTNET,
-    '0x31A252c87183f16B1a33e0f865FCd0D7bB92d409',
+    process.env.REACT_APP_WORKBENCH_ADDRESS_TESTNET,
     18,
     'WORKBENCH',
     'WORKBENCH',

@@ -43,12 +43,9 @@ const initialState: PoolsState = {
 
 // Thunks
 export const fetchPoolsPublicDataAsync = (currentBlock: number) => async (dispatch, getState) => {
-  console.log("------------------------------")
   const blockLimits = await fetchPoolsBlockLimits()
   const totalStakings = await fetchPoolsTotalStaking()
-
   const prices = getTokenPricesFromFarm(getState().farms.data)
-
   const liveData = poolsConfig.map((pool) => {
     const blockLimit = blockLimits.find((entry) => entry.sousId === pool.sousId)
     const totalStaking = totalStakings.find((entry) => entry.sousId === pool.sousId)
