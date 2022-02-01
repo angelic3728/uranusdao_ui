@@ -7,7 +7,7 @@ import { getExplorerLink, isBlindMode } from 'utils'
 import { useTranslation } from 'contexts/Localization'
 import ExpandableSectionButton from 'components/ExpandableSectionButton'
 import { BASE_ADD_LIQUIDITY_URL } from 'config'
-import { supplyTAN } from 'config/constants/supplyTAN'
+import { getSupplyPerBlock } from 'utils/supply'
 import { getAddress } from 'utils/addressHelpers'
 import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
 import { getBalanceAmount } from 'utils/formatBalance'
@@ -68,7 +68,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, displayApr, removed, tanPrice
   const lpAddress = getAddress(farm.lpAddresses)
   const isPromotedFarm = farm.token.symbol === 'TAN'
 
-  const TAN_PER_BLOCK = Number(supplyTAN())
+  const TAN_PER_BLOCK = Number(getSupplyPerBlock())
 
   return (
     <StyledCard isActive={false}>

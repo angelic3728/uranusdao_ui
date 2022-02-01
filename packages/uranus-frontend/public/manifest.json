@@ -1,8 +1,8 @@
 {
-  "short_name": "VVS Finance",
-  "name": "VVS Finance",
-  "description": "Farm VVS with LP Tokens",
-  "homepage_url": "https://vvs.finance",
+  "short_name": "URANUS Finance",
+  "name": "URANUS Finance",
+  "description": "Farm URANUS with LP Tokens",
+  "homepage_url": "https://uranus.finance",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#1FC7D4",

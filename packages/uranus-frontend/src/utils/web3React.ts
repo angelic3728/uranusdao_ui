@@ -6,7 +6,7 @@ import { ConnectorNames } from 'uranus-uikit'
 import { ethers } from 'ethers'
 import getNodeUrl from './getRpcUrl'
 
-const POLLING_INTERVAL = 12000000 // 12000 for mainnet
+const POLLING_INTERVAL = 12000 // 12000 for mainnet
 const rpcUrl = getNodeUrl()
 const chainId = parseInt(process.env.REACT_APP_CHAIN_ID, 10)
 
@@ -21,7 +21,7 @@ const walletconnect = new WalletConnectConnector({
 const defiWalletConnect = new DeFiWeb3Connector({
   supportedChainIds: [chainId],
   rpc: { [chainId]: rpcUrl },
-  pollingInterval: 15000000, // 15000 for mainnet
+  pollingInterval: 15000, // 15000 for mainnet
 })
 
 const bscConnector = new BscConnector({ supportedChainIds: [chainId] })

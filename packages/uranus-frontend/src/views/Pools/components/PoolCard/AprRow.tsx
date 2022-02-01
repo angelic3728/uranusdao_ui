@@ -9,7 +9,7 @@ import { getAprData } from 'views/Pools/helpers'
 import BigNumber from 'bignumber.js'
 import { BIG_ZERO } from 'utils/bigNumber'
 import { isBlindMode } from 'utils'
-import { supplyTAN } from 'config/constants/supplyTAN'
+import { getSupplyPerBlock } from 'utils/supply'
 import { useFarmFromPid } from 'state/farms/hooks'
 
 const ApyLabelContainer = styled(Flex)`
@@ -59,7 +59,7 @@ const AprRow: React.FC<AprRowProps> = ({ pool, stakedBalance, performanceFee = 0
 
   const tanFarm = useFarmFromPid(0)
 
-  const TAN_PER_BLOCK = Number(supplyTAN())
+  const TAN_PER_BLOCK = Number(getSupplyPerBlock())
 
   return (
     isBlindMode() ? <Flex alignItems="center" justifyContent="space-between">
