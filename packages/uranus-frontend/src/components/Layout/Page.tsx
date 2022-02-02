@@ -51,7 +51,7 @@ export const SEOHead: React.FC<{ symbol?: string }> = ({ symbol }) => {
   const { t } = useTranslation()
   const { pathname } = useLocation()
 
-  const defaultTitle = `${t('URANUS Finance')} | ${t('Simple DeFi Trading For All')}`
+  const defaultTitle = `${t('URANUS Finance')} | ${t('URANUS DeFi Trading For All')}`
   const defaultDescription = t('URANUS Finance is your gateway to the decentralized finance movement.Take control of your finances and earn sparkly URANUS rewards.Low fees, fast transactions and competitive earnings.')
   const canonical = window.location.href;
 
