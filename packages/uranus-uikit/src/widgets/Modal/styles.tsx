@@ -65,7 +65,7 @@ export const ModalContainer = styled(Box)<{ minWidth: string }>`
   overflow: hidden;
   background: ${({ theme }) => theme.modal.background};
   border: 1px solid ${({ theme }) => theme.colors.cardBorder};
-  border-radius: 18px;
+  border-radius: 8px;
   width: 100%;
   max-height: 100vh;
   z-index: ${({ theme }) => theme.zIndices.modal};

@@ -68,16 +68,6 @@ const farms: SerializedFarmConfig[] = [
     quoteToken: serializedTokens.wbtc,
   },
   {
-    pid: 4,
-    lpSymbol: 'TAN-USDC LP',
-    lpAddresses: {
-      338: '0x95181325915978274aaE794d3d13162266f3cB7D',
-      25: '0xbf62c67eA509E86F07c8c69d0286C0636C50270b',
-    },
-    token: serializedTokens.tan,
-    quoteToken: serializedTokens.usdc,
-  },
-  {
     pid: 5,
     lpSymbol: 'CRO-ETH LP',
     lpAddresses: {
@@ -87,16 +77,6 @@ const farms: SerializedFarmConfig[] = [
     token: serializedTokens.wcro,
     quoteToken: serializedTokens.eth,
   },
-  // {
-  //   pid: 6,
-  //   lpSymbol: 'TAN(old)-CRO LP',
-  //   lpAddresses: {
-  //     338: '0x3CE95106bb187f1954c1bc3A55f8f2Cc219EeBD4',
-  //     25: '0x814920d1b8007207db6cb5a2dd92bf0b082bdba1',
-  //   },
-  //   token: serializedTokens.tan,
-  //   quoteToken: serializedTokens.usdc,
-  // },
   {
     pid: 7,
     lpSymbol: 'CRO-USDC LP',
@@ -104,7 +84,17 @@ const farms: SerializedFarmConfig[] = [
       338: '0x991f4BC2A18e8A08e50bB5aAdB55571F4a01a6f6',
       25: '0x814920d1b8007207db6cb5a2dd92bf0b082bdba1',
     },
-    token: serializedTokens.wcro,
+    token: serializedTokens.usdc,
+    quoteToken: serializedTokens.wcro,
+  },
+  {
+    pid: 8,
+    lpSymbol: 'TAN-USDC LP',
+    lpAddresses: {
+      338: '0x95181325915978274aaE794d3d13162266f3cB7D',
+      25: '0xbf62c67eA509E86F07c8c69d0286C0636C50270b',
+    },
+    token: serializedTokens.tan,
     quoteToken: serializedTokens.usdc,
   },
 ]

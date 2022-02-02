@@ -1,4 +1,4 @@
-# Contributing to the VVS ecosystem 🥞
+# Contributing to the URANUS ecosystem 🥞
 
 ## Setup
 
@@ -51,7 +51,7 @@ t(key, data)
 If a Crowdin translation like this `You have %num% left in your wallet` - would look something like:
 
 ```
-t(`You have %num% left in your wallet`, { num: vvsBalance })
+t(`You have %num% left in your wallet`, { num: tanBalance })
 ```
 
 ## Issue reports

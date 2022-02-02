@@ -72,12 +72,12 @@ export default function Updater(): null {
               toast(
                 'Transaction receipt',
                 <Flex flexDirection="column">
-                  <Text color="darkGrey" fontWeight="400" fontSize="13px">
+                  <Text color="text" fontWeight="400" fontSize="13px">
                     {transactions[hash]?.summary ?? `Hash: ${hash.slice(0, 8)}...${hash.slice(58, 65)}`}
                   </Text>
                   {chainId && (
                     <Link external href={getExplorerLink(hash, 'transaction', chainId)}>
-                      <Text fontSize="13px" fontWeight="400" color="darkBlue">
+                      <Text fontSize="13px" fontWeight="400" color="text">
                         View on Cronos Explorer
                       </Text>
                     </Link>

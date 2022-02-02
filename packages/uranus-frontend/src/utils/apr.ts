@@ -1,6 +1,6 @@
 import BigNumber from 'bignumber.js'
 import { BLOCKS_PER_MONTH, COE_SUPPLY_VARING } from 'config'
-import { supplyTAN } from 'config/constants/supplyTAN'
+import { getSupply, callUpdateOncePerDay } from 'utils/supply'
 import lpAprs from 'config/constants/lpAprs.json'
 
 /**
@@ -38,8 +38,9 @@ export const getFarmApr = (
   poolLiquidityUsd: BigNumber,
   farmAddress: string,
 ): { tanRewardsApr: number; lpRewardsApr: number } => {
-  const SUPPLY_PER_BLOCK = Number(supplyTAN())
-  const yearlyTanRewardAllocation = poolWeight ? poolWeight.times(SUPPLY_PER_BLOCK * BLOCKS_PER_MONTH * COE_SUPPLY_VARING) : new BigNumber(NaN)
+  const SUPPLY_PER_MONTH = Number(getSupply())
+  callUpdateOncePerDay()
+  const yearlyTanRewardAllocation = poolWeight ? poolWeight.times(SUPPLY_PER_MONTH * COE_SUPPLY_VARING) : new BigNumber(NaN)
   const tanRewardsApr = yearlyTanRewardAllocation.times(tanPriceUsd).div(poolLiquidityUsd).times(100)
   let tanRewardsAprAsNumber = null
   if (!tanRewardsApr.isNaN() && tanRewardsApr.isFinite()) {

@@ -233,7 +233,7 @@ const Stats = () => {
       </TriangleWrapper>
       <Flex justifyContent="center" alignItems="center" flexDirection="column">
         <TitleWrapper>
-          We aim to make DeFi simple and within reach of billions. Low fees, fast transactions, and competitive
+          We aim to make URANUS DeFi within reach of billions. Low fees, fast transactions, and competitive
           earnings.
         </TitleWrapper>
         <FlexImagesWrapper flexDirection={['column', null, null, 'row']} justifyContent="space-around" width="100%">

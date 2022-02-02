@@ -559,7 +559,7 @@ const Hero = () => {
       </HeroBgWrapper>
       <HeroContainer position="relative" justifyContent="center" id="homepage-hero" minHeight="358px">
         <Flex flex="1" flexDirection="column" maxWidth="512px" mt={["40px", "40px", "40px", "80px"]}>
-          <StyledBigHeading>Very, Very Simple DeFi Trading for All</StyledBigHeading>
+          <StyledBigHeading>URANUS DeFi Trading for All</StyledBigHeading>
           <Text {...titleStyleProps} color="white">
             Your gateway to the decentralized finance movement. Take control of your finances and earn sparkly URANUS
             rewards.

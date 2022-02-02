@@ -2,7 +2,7 @@ import { ContextApi } from 'contexts/Localization/types'
 import { PageMeta } from './types'
 
 export const DEFAULT_META: PageMeta = {
-  title: 'URANUS Finance | Simple DeFi Trading For All',
+  title: 'URANUS Finance | URANUS DeFi Trading For All',
   description: 'URANUS Finance is your gateway to the decentralized finance movement.Take control of your finances and earn sparkly TAN rewards.Low fees, fast transactions and competitive earnings.',
   image: 'https://uranus.finance/images/logo.png',
   siteName: 'TAN Finance',
@@ -27,7 +27,7 @@ export const getCustomMeta = (path: string, t: ContextApi['t']): PageMeta => {
   switch (basePath) {
     case '/':
       return {
-        title: `${t('URANUS Finance')} | ${t('Simple DeFi Trading For All')}`,
+        title: `${t('URANUS Finance')} | ${t('URANUS DeFi Trading For All')}`,
         description: t('URANUS Finance is your gateway to the decentralized finance movement.Take control of your finances and earn sparkly TAN rewards.Low fees, fast transactions and competitive earnings.')
       }
     case '/swap':
