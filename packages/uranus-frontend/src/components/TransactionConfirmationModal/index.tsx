@@ -45,7 +45,7 @@ function ConfirmationPendingContent({ pendingText }: { pendingText: string }) {
     <Wrapper>
       <ConfirmedIcon>
         {/* <Spinner /> */}
-        <Image src="/images/loadingDiamond.gif" width={120} height={120} alt="static-waiting" />
+        <Image src="/images/Isabel-PRO-Healthcare.gif" width={120} height={120} alt="static-waiting" />
       </ConfirmedIcon>
       <AutoColumn justify="center">
         <Text fontSize="28px" fontWeight="400">
@@ -56,7 +56,7 @@ function ConfirmationPendingContent({ pendingText }: { pendingText: string }) {
             {pendingText}
           </Text>
         </AutoColumn>
-        <Box padding="18px" background={theme.colors.primary} borderRadius="12px" width="325px">
+        <Box padding="18px" background={theme.colors.primary} borderRadius="4px" width="360px">
           <InlineImage src="/images/exclamationPoint.svg" height={22} width={22} />
           <Text small color={theme.colors.textSubtle} textAlign="center" fontSize="13px" display="inline-block">
             {t('Please confirm this transaction in your wallet')}
