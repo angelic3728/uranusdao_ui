@@ -15,7 +15,7 @@ const pools: SerializedPoolConfig[] = [
     },
     poolCategory: PoolCategory.CORE,
     harvest: true,
-    tokenPerBlock: process.env.REACT_APP_TOKEN_PER_BLOCK, // FIXME pool tokenPerBlock
+    // tokenPerBlock: process.env.REACT_APP_TOKEN_PER_BLOCK, // FIXME pool tokenPerBlock
     sortOrder: 1,
     isFinished: false,
   }

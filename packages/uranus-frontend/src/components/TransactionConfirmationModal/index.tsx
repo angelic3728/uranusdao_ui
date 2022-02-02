@@ -45,7 +45,7 @@ function ConfirmationPendingContent({ pendingText }: { pendingText: string }) {
     <Wrapper>
       <ConfirmedIcon>
         {/* <Spinner /> */}
-        <Image src="/images/Isabel-PRO-Healthcare.gif" width={120} height={120} alt="static-waiting" />
+        <Image src="/images/loading/loading-45.gif" width={120} height={120} alt="static-waiting" />
       </ConfirmedIcon>
       <AutoColumn justify="center">
         <Text fontSize="28px" fontWeight="400">

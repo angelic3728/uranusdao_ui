@@ -8,16 +8,18 @@ import lpAprs from 'config/constants/lpAprs.json'
  * @param stakingTokenPrice Token price in the same quote currency
  * @param rewardTokenPrice Token price in the same quote currency
  * @param totalStaked Total amount of stakingToken in the pool
- * @param tokenPerBlock Amount of new TAN allocated to the pool for each new block
+ // * @param tokenPerBlock Amount of new TAN allocated to the pool for each new block
  * @returns Null if the APR is NaN or infinite.
  */
 export const getPoolApr = (
   stakingTokenPrice: number,
   rewardTokenPrice: number,
   totalStaked: number,
-  tokenPerBlock: number,
+  // tokenPerBlock: number,
 ): number => {
-  const totalRewardPricePerYear = new BigNumber(rewardTokenPrice).times(tokenPerBlock).times(BLOCKS_PER_MONTH).times(COE_SUPPLY_VARING)
+  const SUPPLY_PER_MONTH = Number(getSupply())
+  callUpdateOncePerDay()
+  const totalRewardPricePerYear = new BigNumber(rewardTokenPrice).times(SUPPLY_PER_MONTH).div(11).times(COE_SUPPLY_VARING)
   const totalStakingTokenInPool = new BigNumber(stakingTokenPrice).times(totalStaked)
   // const totalStakingTokenInPool = new BigNumber(stakingTokenPrice).times(1000000000) // XXX debug hard code for APR
   const apr = totalRewardPricePerYear.div(totalStakingTokenInPool).times(100)
@@ -40,7 +42,7 @@ export const getFarmApr = (
 ): { tanRewardsApr: number; lpRewardsApr: number } => {
   const SUPPLY_PER_MONTH = Number(getSupply())
   callUpdateOncePerDay()
-  const yearlyTanRewardAllocation = poolWeight ? poolWeight.times(SUPPLY_PER_MONTH * COE_SUPPLY_VARING) : new BigNumber(NaN)
+  const yearlyTanRewardAllocation = poolWeight ? poolWeight.times(SUPPLY_PER_MONTH).div(11).times(10).times(COE_SUPPLY_VARING) : new BigNumber(NaN)
   const tanRewardsApr = yearlyTanRewardAllocation.times(tanPriceUsd).div(poolLiquidityUsd).times(100)
   let tanRewardsAprAsNumber = null
   if (!tanRewardsApr.isNaN() && tanRewardsApr.isFinite()) {
