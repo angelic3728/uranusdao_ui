@@ -87,7 +87,7 @@ interface PoolConfigBaseProps {
   sousId: number
   contractAddress: Address
   poolCategory: PoolCategory
-  tokenPerBlock: string
+  // tokenPerBlock: string
   sortOrder?: number
   harvest?: boolean
   isFinished?: boolean
