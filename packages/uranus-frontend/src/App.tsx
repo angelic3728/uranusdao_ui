@@ -1,5 +1,5 @@
 import React, { lazy } from 'react'
-import { Router, Redirect, Route, Switch, useParams } from 'react-router-dom'
+import { HashRouter, Redirect, Route, Switch, useParams } from 'react-router-dom'
 import { ResetCSS } from 'uranus-uikit'
 import BigNumber from 'bignumber.js'
 import useEagerConnect from 'hooks/useEagerConnect'
@@ -66,7 +66,7 @@ const App: React.FC = () => {
   // useFetchProfile()
   // usePollCoreFarmData()
   return (
-    <Router history={history}>
+    <HashRouter history={history}>
       <Sidebar />
       <ScrollToTop>
         <ResetCSS />
@@ -133,7 +133,7 @@ const App: React.FC = () => {
         <ToastListener />
         <DatePickerPortal />
       </ScrollToTop>
-    </Router>
+    </HashRouter>
   )
 }
 
